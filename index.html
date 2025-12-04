@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izrada Web Stranica BiH | Cijena, WordPress & SEO Optimizacija</title>
+    <meta name="description" content="Profesionalna izrada web stranica u BiH. Provjerite cijene izrade za Sarajevo, Tuzlu i Banja Luku. Specijalizirani za WordPress, turističke agencije i web shopove.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Izrada Web Stranica BiH",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sarajevo",
+        "addressCountry": "BA"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Sarajevo" },
+        { "@type": "City", "name": "Banja Luka" },
+        { "@type": "City", "name": "Tuzla" },
+        { "@type": "City", "name": "Mostar" },
+        { "@type": "City", "name": "Zenica" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Usluge Web Dizajna",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Izrada Web Stranica u WordPressu" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Izrada Web Stranica za Turističke Agencije" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Izrada Web Stranica za Apartmane" } }
+        ]
+      }
+    }
+    </script>
+
+    <style>
+        /* --- 1. BOJE & VARIJABLE --- */
+        :root {
+            --bordo-main: #8B0A1A;        
+            --bordo-dark: #6B0814;
+            --bordo-light: #A61C2B;       
+            --ljubicasta: #9B59B6;        
+            
+            --bg-body: #ffffff;
+            --bg-section-gray: #fcfcfc;
+            
+            --text-dark: #111111;
+            --text-gray: #555555;
+            
+            --glass-bg: rgba(255, 255, 255, 0.95);
+            --glass-card: rgba(255, 255, 255, 0.9);
+            --glass-border: rgba(0, 0, 0, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-body);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 { font-weight: 800; line-height: 1.2; color: var(--text-dark); }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* Helpers */
+        .red-text { color: var(--bordo-main); }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--bordo-main), var(--ljubicasta));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .section-padding { padding: 6rem 1rem; position: relative; z-index: 2; }
+        .container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 5; padding-left: 1rem; padding-right: 1rem; }
+
+        /* --- 2. HEADER --- */
+        header {
+            position: sticky; top: 1.5rem; z-index: 1000; width: 90%; max-width: 1150px; margin: 0 auto;
+            border-radius: 50px; background: var(--glass-bg); backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border); box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease;
+        }
+        .nav-container { padding: 0.7rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-icon {
+            width: 42px; height: 42px; background: linear-gradient(135deg, var(--bordo-main), var(--bordo-light));
+            color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; box-shadow: 0 4px 15px rgba(139, 10, 26, 0.3);
+        }
+        .logo-text-col { display: flex; flex-direction: column; line-height: 1; }
+        .logo-main { font-size: 1.2rem; font-weight: 800; color: var(--text-dark); text-transform: uppercase; letter-spacing: -0.5px; }
+        .logo-sub { font-family: 'Dancing Script', cursive; font-size: 1.1rem; color: var(--bordo-main); margin-top: -2px; }
+
+        nav ul.desktop-menu { display: flex; gap: 2rem; align-items: center; }
+        nav a.nav-link { color: var(--text-dark); font-weight: 600; font-size: 0.95rem; position: relative; padding: 15px 0; }
+        nav a.nav-link:hover { color: var(--bordo-main); }
+
+        /* Dropdown */
+        .mega-dropdown-parent { position: relative; }
+        .mega-dropdown-parent::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 20px; background: transparent; }
+        .dropdown-menu {
+            display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px);
+            background: white; width: 300px; /* Uzi dropdown jer nema mega grida */
+            border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            z-index: 900; border-top: 4px solid var(--bordo-main); padding: 1rem; opacity: 0; transition: all 0.3s ease;
+        }
+        .mega-dropdown-parent:hover .dropdown-menu { display: block; opacity: 1; transform: translateX(-50%) translateY(0); }
+        
+        .dropdown-link { display: block; padding: 0.8rem; color: var(--text-gray); font-weight: 500; border-radius: 8px; }
+        .dropdown-link:hover { background: #f3e8ff; color: var(--bordo-main); padding-left: 1.2rem; }
+
+        /* BUTTONS */
+        .cta-button {
+            display: inline-block; padding: 0.75rem 1.8rem; border-radius: 50px;
+            color: white; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px;
+            background: linear-gradient(90deg, var(--bordo-main) 0%, var(--ljubicasta) 100%);
+            box-shadow: 0 5px 15px rgba(139, 10, 26, 0.3); border: none; cursor: pointer; transition: 0.4s;
+        }
+        .cta-button:hover { box-shadow: 0 8px 25px rgba(155, 89, 182, 0.4); transform: translateY(-2px); }
+
+        /* --- GLOBAL BACKGROUND (Fixed) --- */
+        #global-boxes-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; 
+            overflow: hidden; background-color: var(--bg-body); pointer-events: none; 
+        }
+        .boxes-core-wrapper {
+            position: absolute; top: 50%; left: 50%; width: 150vw; height: 150vh; 
+            display: flex; flex-wrap: wrap; transform: translate(-50%, -50%) skewX(-48deg) skewY(14deg) scale(0.675);
+            pointer-events: auto;
+        }
+        .box-row-cell {
+            width: 4rem; height: 2rem; border-left: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06);
+            position: relative; transition: background-color 0s;
+        }
+        .box-row-cell svg {
+            position: absolute; top: -10px; left: -10px; width: 1.5rem; height: 1rem;
+            opacity: 0; pointer-events: none; color: var(--bordo-main); transition: opacity 0.3s;
+        }
+        .box-row-cell:hover svg { opacity: 1; }
+
+        .transparent-section { background-color: transparent; }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            padding: 8rem 1rem 6rem; position: relative; overflow: hidden;
+            background: radial-gradient(circle at 70% 50%, #fff0f5 0%, #ffffff 70%); display: flex; align-items: center;
+        }
+        .hero-content { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 2rem; position: relative; z-index: 10; }
+        #hero-canvas-container { width: 100%; height: 500px; position: relative; }
+        .floating-badge {
+            display: inline-flex; align-items: center; padding: 0.5rem 1rem;
+            background: white; border: 1px solid var(--ljubicasta); border-radius: 50px;
+            color: var(--text-dark); font-weight: 700; font-size: 0.85rem; margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(155, 89, 182, 0.2);
+        }
+
+        /* --- CARDS & UI --- */
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; position: relative; z-index: 2; }
+        .grid-2-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; position: relative; z-index: 2; }
+
+        .card {
+            background: var(--glass-card); backdrop-filter: blur(8px);
+            padding: 2rem; border-radius: 16px; border: 1px solid #eee;
+            transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+        }
+        .card:hover { transform: translateY(-8px); border-color: var(--bordo-main); box-shadow: 0 15px 40px rgba(139, 10, 26, 0.1); }
+        .card-icon {
+            width: 50px; height: 50px; background: #fff5f7; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+            color: var(--bordo-main); margin-bottom: 1.5rem;
+        }
+
+        /* TEXT CONTENT BLOCKS */
+        .text-content-block {
+            background: var(--glass-card); backdrop-filter: blur(5px);
+            padding: 2.5rem; border-radius: 16px; border: 1px solid #eee;
+            margin-bottom: 0; height: 100%; transition: 0.3s;
+        }
+        .text-content-block:hover { border-color: var(--ljubicasta); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .text-content-block h3 { color: var(--bordo-main); margin-bottom: 1rem; font-size: 1.3rem; }
+        .text-content-block p { color: #666; margin-bottom: 0; }
+
+        /* --- CAROUSEL --- */
+        .carousel-scene { width: 100%; height: 500px; perspective: 1000px; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; cursor: grab; }
+        .carousel-scene:active { cursor: grabbing; }
+        .carousel-container { width: 240px; height: 320px; position: relative; transform-style: preserve-3d; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); }
+        .carousel-item {
+            position: absolute; width: 100%; height: 100%; left: 0; top: 0; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); border: 2px solid white; background: #eee; backface-visibility: hidden; 
+        }
+        .carousel-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; pointer-events: none; }
+
+        /* --- TABS --- */
+        .tab-wrapper { 
+            background: var(--glass-card); backdrop-filter: blur(10px);
+            padding: 3rem; border-radius: 20px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05); border: 1px solid var(--glass-border);
+            position: relative; z-index: 2; 
+        }
+        .tab-buttons { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
+        .tab-btn {
+            padding: 0.8rem 2.5rem; border-radius: 50px; background: white; 
+            border: 1px solid #eee; color: var(--text-gray); font-weight: 700; cursor: pointer; transition: 0.3s;
+        }
+        .tab-btn:hover, .tab-btn.active { 
+            border-color: var(--bordo-main); color: white; background: linear-gradient(90deg, var(--bordo-main), var(--ljubicasta));
+            box-shadow: 0 5px 15px rgba(139, 10, 26, 0.3);
+        }
+        .tab-content { display: none; animation: fadeIn 0.5s; }
+        .tab-content.active { display: block; }
+        .tab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+        .tab-item { 
+            padding: 1.5rem; background: rgba(255,255,255,0.7); border-radius: 12px; text-align: left; 
+            border: 1px solid rgba(0,0,0,0.05); transition: 0.3s; display: flex; flex-direction: column; justify-content: center;
+        }
+        .tab-item h4 { color: var(--bordo-main); margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .tab-item p { font-size: 0.9rem; color: #666; margin: 0; line-height: 1.4; }
+        .tab-item:hover { background: white; border-color: var(--ljubicasta); box-shadow: 0 10px 25px rgba(155, 89, 182, 0.15); transform: translateY(-3px); }
+
+        /* --- PROCESS --- */
+        .process-container { max-width: 900px; margin: 0 auto; position: relative; padding-left: 20px; }
+        .process-line { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, var(--bordo-main), var(--ljubicasta)); border-radius: 2px; }
+        .process-step { position: relative; margin-bottom: 3rem; padding-left: 40px; }
+        .step-num {
+            position: absolute; left: -23px; top: 0; width: 50px; height: 50px;
+            background: linear-gradient(135deg, var(--bordo-main), var(--bordo-light));
+            color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 1.2rem; border: 4px solid white; box-shadow: 0 5px 15px rgba(139, 10, 26, 0.35);
+        }
+        .step-content { background: var(--glass-card); backdrop-filter: blur(5px); padding: 2rem; border-radius: 12px; border: 1px solid #eee; transition: 0.3s; }
+        .step-content:hover { border-color: var(--bordo-main); transform: translateX(10px); }
+
+        /* --- FAQ --- */
+        .faq-item { margin-bottom: 1rem; border: 1px solid #eee; border-radius: 12px; background: var(--glass-card); backdrop-filter: blur(5px); overflow: hidden; transition: 0.3s; }
+        .faq-question { padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
+        .faq-question h3 { margin: 0; font-size: 1.1rem; font-weight: 700; color: var(--text-dark); transition: 0.3s; }
+        .faq-item.active-item { border-color: var(--bordo-main); box-shadow: 0 5px 15px rgba(139, 10, 26, 0.05); }
+        .faq-item.active-item .faq-question { background: #fff5f7; }
+        .faq-item.active-item .faq-question h3 { color: var(--bordo-main); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 1.5rem; color: #666; }
+        .faq-answer.active { padding: 1.5rem; border-top: 1px solid #f0f0f0; }
+
+        /* --- CTA --- */
+        .cta-section {
+            margin-top: 6rem; background: linear-gradient(135deg, var(--bordo-main), #4a0e16);
+            color: white; text-align: center; padding: 5rem 1rem; position: relative; z-index: 10;
+            border-radius: 30px 30px 0 0; box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
+        }
+        .cta-section h2 { color: white; font-size: 2.5rem; margin-bottom: 1rem; }
+        .cta-section p { color: rgba(255,255,255,0.8); font-size: 1.2rem; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta-button-white {
+            background: white; color: var(--bordo-main); font-weight: 800; padding: 1rem 3rem; border-radius: 50px;
+            text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); transition: 0.3s;
+        }
+        .cta-button-white:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); color: var(--ljubicasta); }
+
+        /* --- FOOTER --- */
+        footer { background: #111; color: #888; padding: 5rem 1rem 2rem; }
+        .f-col h4 { color: white; margin-bottom: 1.5rem; }
+        .f-col a { color: #888; display: block; margin-bottom: 0.5rem; }
+        .f-col a:hover { color: var(--bordo-main); }
+        .mobile-menu-btn { display: none; border: none; background: none; font-size: 1.5rem; cursor: pointer; color: var(--text-dark); }
+        .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; }
+        .lightbox.active { display: flex; opacity: 1; }
+        .lightbox img { max-width: 90%; max-height: 90vh; border-radius: 8px; box-shadow: 0 0 50px rgba(0,0,0,0.5); transform: scale(0.8); transition: transform 0.3s; }
+        .lightbox.active img { transform: scale(1); }
+
+        /* --- MOBILE OPTIMIZATION --- */
+        @media (max-width: 991px) {
+            .hero-section { padding: 4rem 1rem; }
+            .hero-content { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+            .hero-text { order: 1; padding: 0 10px; }
+            #hero-canvas-container { height: 350px; order: 2; width: 100%; }
+            .hero-text h1 { font-size: 2.2rem !important; line-height: 1.2; margin-bottom: 1rem; }
+            .hero-text p { font-size: 1rem !important; margin-bottom: 1.5rem; }
+            .hero-text div[style*="display: flex"] { justify-content: center; gap: 0.8rem; }
+            .hero-text .cta-button { width: auto; min-width: 160px; }
+            
+            .tab-wrapper { padding: 1.5rem; }
+            .tab-btn { padding: 0.6rem 1.2rem; font-size: 0.9rem; flex: 1 1 auto; }
+            .tab-grid { grid-template-columns: 1fr; }
+            .grid-cards { grid-template-columns: 1fr; }
+            .grid-2-col { grid-template-columns: 1fr; } 
+            
+            .cta-section { padding: 4rem 1rem; }
+            .cta-section h2 { font-size: 2rem; }
+
+            nav ul.desktop-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 0 0 16px 16px; flex-direction: column; align-items: flex-start; z-index: 2000; }
+            nav ul.desktop-menu.mobile-active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .mega-dropdown-parent:hover .dropdown-menu { display: none; } 
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <div class="logo-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="logo-text-col">
+                    <span class="logo-main">Izrada <span class="red-text">Web</span></span>
+                    <span class="logo-sub">stranice</span>
+                </div>
+            </a>
+            
+            <nav>
+                <ul class="desktop-menu" id="mainNav">
+                    <li><a href="/" class="nav-link">Početna</a></li>
+                    <li class="mega-dropdown-parent">
+                        <a href="#usluge" class="nav-link">Usluge <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px; color: var(--ljubicasta);"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-link">Izrada WordPress stranice</a>
+                            <a href="#" class="dropdown-link">Izrada online prodavnice</a>
+                            <a href="#" class="dropdown-link">Redizajn web stranice</a>
+                            <a href="#" class="dropdown-link">Landing stranice</a>
+                            <a href="#" class="dropdown-link">Custom development</a>
+                            <a href="#" class="dropdown-link">Mobilne aplikacije</a>
+                        </div>
+                    </li>
+                    <li><a href="#portfolio" class="nav-link">Radovi</a></li>
+                    <li><a href="#proces" class="nav-link">Proces</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+                    <li><a href="#faq" class="cta-button">Cijena Izrade</a></li>
+                </ul>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <div id="global-boxes-bg"><div class="boxes-core-wrapper" id="boxes-grid"></div></div>
+
+    <section class="hero-section">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="floating-badge"><i class="fas fa-check-circle" style="color:var(--bordo-main); margin-right:6px;"></i> Moderna & Funkcionalna Izrada</div>
+                <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem;">Profesionalna <span class="gradient-text">Izrada Web Stranica</span><br>Koja Donosi Rezultate</h1>
+                <p style="font-size: 1.15rem; color: #666; margin-bottom: 2.5rem; max-width: 90%;">Tražite rješenje za web dizajn? Nudimo kompletnu uslugu: od <strong>izrade web stranica u WordPressu</strong> do premium shopova. Vaša stranica je SEO optimizovana za Google i prilagođena mobilnim uređajima.</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#faq" class="cta-button">Saznaj Cijene</a>
+                    <a href="#portfolio" class="cta-button" style="background: white; color: var(--text-dark); border: 2px solid var(--bordo-main); box-shadow: none;">Naš Portfolio</a>
+                </div>
+                <div style="margin-top:20px; font-size:0.9rem; color:#555;"><strong>500+ Zadovoljnih klijenata</strong> širom BiH</div>
+            </div>
+            <div id="hero-canvas-container"></div>
+        </div>
+    </section>
+
+    <section class="section-padding transparent-section" id="usluge">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Web Dizajn Usluge - <span class="gradient-text">Top Level</span></h2>
+                <p>Nudimo sveobuhvatno rješenje za vaše poslovanje. Bilo da vam treba izrada web stranica, dizajn i branding ili online prodavnica.</p>
+            </div>
+            <div class="grid-cards">
+                <div class="card">
+                    <div>
+                        <div class="card-icon"><i class="fab fa-wordpress"></i></div>
+                        <h3>Izrada WordPress Stranice</h3>
+                        <p style="color:#666; margin-top:1rem;">Fleksibilno rješenje za sve vrste biznisa. Jednostavno održavanje web stranice i upravljanje sadržajem.</p>
+                    </div>
+                    <a href="#" style="color: var(--bordo-main); font-weight: 700; margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 5px;">Saznaj više <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="card-icon"><i class="fas fa-shopping-cart"></i></div>
+                        <h3>Izrada Online Prodavnice</h3>
+                        <p style="color:#666; margin-top:1rem;">Prodajte svoje proizvode online 24/7. WooCommerce ili Shopify rješenja koja konvertuju posjetioce u kupce.</p>
+                    </div>
+                    <a href="#" style="color: var(--bordo-main); font-weight: 700; margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 5px;">Saznaj više <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="card-icon"><i class="fas fa-pencil-ruler"></i></div>
+                        <h3>Custom Web Dizajn</h3>
+                        <p style="color:#666; margin-top:1rem;">Unikatan web dizajn kreiran specifično za vaš brend. Da vaša web stranica izgleda moderno i profesionalno.</p>
+                    </div>
+                    <a href="#" style="color: var(--bordo-main); font-weight: 700; margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 5px;">Saznaj više <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="card-icon"><i class="fas fa-sync-alt"></i></div>
+                        <h3>Redizajn Web Stranice</h3>
+                        <p style="color:#666; margin-top:1rem;">Web stranica već postoji, ali treba ažuriranje? Vaša stranica može dobiti novi život s našom redizajn uslugom.</p>
+                    </div>
+                    <a href="#" style="color: var(--bordo-main); font-weight: 700; margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 5px;">Saznaj više <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Landing Stranice</h3>
+                        <p style="color:#666; margin-top:1rem;">Fokusirane stranice za kampanje. Optimizovane za maksimalnu konverziju posjetilaca u kupce.</p>
+                    </div>
+                    <a href="#" style="color: var(--bordo-main); font-weight: 700; margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 5px;">Saznaj više <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Mobilne Aplikacije</h3>
+                        <p style="color:#666; margin-top:1rem;">Razvoj nativnih i hibridnih mobilnih aplikacija za iOS i Android platforme.</p>
+                    </div>
+                    <a href="#" style="color: var(--bordo-main); font-weight: 700; margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 5px;">Saznaj više <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding transparent-section" id="portfolio">
+        <div class="container" style="text-align: center;">
+            <div style="margin-bottom: 3rem;">
+                <h2>Naši <span class="gradient-text">Radovi</span></h2>
+                <p>Pogledajte neke od naših uspješnih projekata. Povucite miš lijevo/desno da rotirate galeriju.</p>
+            </div>
+            <div class="carousel-scene" id="carousel-scene"><div class="carousel-container" id="carousel-container"></div></div>
+        </div>
+    </section>
+
+    <section class="section-padding transparent-section">
+        <div class="container">
+            <div style="margin-bottom: 4rem;">
+                <h2 style="text-align: center;">Zašto <span class="gradient-text">Odabrati Nas?</span></h2>
+                <p style="text-align: center; color:#666;">Profesionalna izrada web stranica i dizajn web rješenja čine nas vodećim partnerom u Bosni i Hercegovini.</p>
+            </div>
+            <div class="grid-cards">
+                <div class="text-content-block">
+                    <h3>Profesionalnost</h3>
+                    <p>Profesionalna izrada web stranica i dizajn web rješenja čine nas vodećim partnerom. Naš pristup osigurava da web stranica može donijeti realne rezultate za vas.</p>
+                </div>
+                <div class="text-content-block">
+                    <h3>Iskustvo</h3>
+                    <p>Sa preko 500+ zadovoljnih klijenata, koristimo provjerene tehnologije. Radimo sa web stranicom kako bi bila funkcionalna i moderna, dizajnirana da konvertuje.</p>
+                </div>
+                <div class="text-content-block">
+                    <h3>Sigurnost</h3>
+                    <p>Za vašu web stranicu osiguravamo kontinuiranu zaštitu od prijetnji. Sve web stranice koje održavamo su redovno ažurirane i zaštićene.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding transparent-section">
+        <div class="container">
+            <div class="grid-2-col">
+                <div class="text-content-block">
+                    <h3>Šta Čini Vašu Web Stranicu Uspješnom?</h3>
+                    <p>Moderna i funkcionalna web stranica nije samo lijep dizajn - to je strateški alat za rast poslovanja. Stranice koje kreiramo kombinuju estetiku i funkcionalnost. Vaša web stranica i njen dizajn moraju raditi zajedno kako bi privukli i zadržali posjetioce.</p>
+                </div>
+                <div class="text-content-block">
+                    <h3>Web Dizajn Prilagođen Vašem Brendu</h3>
+                    <p>Dizajn i izrada web stranice idu ruku pod ruku. Svaka web stranica koja se razvija kod nas prolazi kroz proces brandiranja. Web dizajn web stranice mora biti intuitivan i privlačan.</p>
+                </div>
+                <div class="text-content-block">
+                    <h3>Održavanje Web Stranica</h3>
+                    <p>Web stranica već od prvog dana zahtijeva redovno održavanje. Nudimo održavanje web stranice kako bi sistema bila sigurna, brza i funkcionalna. Naše web stranice dolaze s opcijom mjesečnog održavanja.</p>
+                </div>
+                <div class="text-content-block">
+                    <h3>Brza Izrada Web Stranice</h3>
+                    <p>Razumijemo da vrijeme znači novac. Izrada web stranica već može biti završena za 2-4 sedmice, zavisno od kompleksnosti. Web stranica već od prvog dana može početi donositi rezultate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding transparent-section" id="industrije">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2>Sajtovi po <span class="gradient-text">Kategorijama i Gradovima</span></h2>
+                <p>Pogledajte gdje sve radimo i za koje industrije smo specijalizirani.</p>
+            </div>
+            <div class="tab-wrapper">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="openTab(event, 'ind')">Po Industrijama</button>
+                    <button class="tab-btn" onclick="openTab(event, 'tip')">Po Tipu Sajta</button>
+                    <button class="tab-btn" onclick="openTab(event, 'loc')">Po Lokacijama</button>
+                </div>
+                <div id="ind" class="tab-content active">
+                    <div class="tab-grid">
+                        <div class="tab-item">
+                            <h4>Izrada Web Stranica za Turističke Agencije</h4>
+                            <p>Specijalizirani booking sistemi i prezentacija aranžmana.</p>
+                        </div>
+                        <div class="tab-item">
+                            <h4>Izrada Web Stranica za Apartmane</h4>
+                            <p>Povećajte popunjenost vaših apartmana uz direktne rezervacije.</p>
+                        </div>
+                        <div class="tab-item"><h4>Izrada web stranice za Nekretnine</h4><p>Napredna pretraga i mapiranje objekata.</p></div>
+                        <div class="tab-item"><h4>Izrada web stranice za Advokate</h4><p>Kredibilitet, blog i zakazivanje konsultacija.</p></div>
+                        <div class="tab-item"><h4>Izrada web stranice za klinike</h4><p>Online zakazivanje i cjenovnik usluga.</p></div>
+                        <div class="tab-item"><h4>Izrada web stranica za Restorane</h4><p>Jelovnici, rezervacije i galerija hrane.</p></div>
+                    </div>
+                </div>
+                <div id="tip" class="tab-content">
+                    <div class="tab-grid">
+                        <div class="tab-item"><h4>WordPress Sajt</h4><p>Najpopularniji CMS, lak za korištenje.</p></div>
+                        <div class="tab-item"><h4>Web Prodavnica</h4><p>Online prodaja.</p></div>
+                        <div class="tab-item"><h4>Portal za Vijesti</h4><p>Optimizovan za veliki broj posjeta.</p></div>
+                        <div class="tab-item"><h4>Portfolio</h4><p>Prikaz radova.</p></div>
+                    </div>
+                </div>
+                <div id="loc" class="tab-content">
+                    <div class="tab-grid">
+                        <div class="tab-item">
+                             <h4>Izrada Web Stranica Sarajevo</h4>
+                             <p>Naše sjedište. Vodeća agencija za web dizajn u glavnom gradu.</p>
+                        </div>
+                        <div class="tab-item">
+                             <h4>Izrada Web Stranica Banja Luka</h4>
+                             <p>Kompletna podrška i izrada sajtova za klijente u Banja Luci.</p>
+                        </div>
+                        <div class="tab-item">
+                             <h4>Izrada Web Stranica Tuzla</h4>
+                             <p>E-commerce i poslovna rješenja za firme iz Tuzle.</p>
+                        </div>
+                        <div class="tab-item">
+                             <h4>Izrada Web Stranica Mostar</h4>
+                             <p>Fokus na turizam i uslužne djelatnosti u Hercegovini.</p>
+                        </div>
+                        <div class="tab-item">
+                             <h4>Izrada Web Stranica BiH</h4>
+                             <p>Radimo online s klijentima iz cijele Bosne i Hercegovine.</p>
+                        </div>
+                        <div class="tab-item">
+                             <h4>Izrada Web Stranica Zenica</h4>
+                             <p>Brzi i optimizovani sajtovi za Zenički region.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section-padding transparent-section" id="proces">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2>Proces Izrade - <span class="gradient-text">Od Ideje do Gotove Web Stranice</span></h2>
+                <p>Razumijemo da je u izradu web stranice potrebno uložiti pažnju u svakom detalju.</p>
+            </div>
+            <div class="process-container">
+                <div class="process-line"></div>
+                <div class="process-step"><div class="step-num">1</div><div class="step-content"><h3>Analiza i Planiranje</h3><p>Naš proces za izradu web stranice počinje detaljnom analizom vaših potreba. Kreiramo modernu i funkcionalnu web stranicu koja odražava vrijednosti vašeg brenda.</p></div></div>
+                <div class="process-step"><div class="step-num">2</div><div class="step-content"><h3>Dizajn i Prototip</h3><p>Tokom izrade web stranica, u stalnoj smo komunikaciji s vama. Vaše web stranice dizajniramo prema najnovijim standardima, osiguravajući da web stranica bude responzivna i brza.</p></div></div>
+                <div class="process-step"><div class="step-num">3</div><div class="step-content"><h3>Razvoj i Kodiranje</h3><p>Za izradu web stranica koje donose rezultate, koristimo provjerene tehnologije i najbolje prakse dizajna web stranica.</p></div></div>
+                <div class="process-step"><div class="step-num">4</div><div class="step-content"><h3>Unos Sadržaja i SEO</h3><p>Nove web stranice dobijaju kompletnu SEO optimizaciju prije lansiranja. Web stranica mora biti brza, sigurna i prilagođena mobilnim uređajima.</p></div></div>
+                <div class="process-step"><div class="step-num">5</div><div class="step-content"><h3>Lansiranje i Obuka</h3><p>Puštamo sajt u rad i učimo vas kako da samostalno mijenjate sadržaj.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding transparent-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Tehničke <span class="gradient-text">Prednosti</span></h2>
+            <div class="grid-2-col">
+                <div class="card">
+                    <h3>SEO Optimizacija za Google</h3>
+                    <p style="font-size:0.9rem; margin-top:10px;">Profesionalna izrada web stranica i SEO optimizacija su nerazdvojni. Vaša stranica će biti tehnički pripremljena da se visoko rangira na Googleu za ključne riječi vašeg biznisa.</p>
+                </div>
+                <div class="card">
+                    <h3>WordPress Platforma</h3>
+                    <p style="font-size:0.9rem; margin-top:10px;">Koristimo WordPress, najpopularniji CMS na svijetu. To vam omogućava da sami mijenjate slike i tekstove bez plaćanja programera nakon izrade.</p>
+                </div>
+                <div class="card">
+                    <h3>Mobilna Optimizacija</h3>
+                    <p style="font-size:0.9rem; margin-top:10px;">Web stranice su danas najčešće posjećene s mobilnih uređaja. Garantujemo "Mobile-First" pristup kako bi stranica izgledala savršeno na telefonima.</p>
+                </div>
+                <div class="card">
+                    <h3>Hosting i Domena</h3>
+                    <p style="font-size:0.9rem; margin-top:10px;">U izradu web stranice uključujemo i pomoć oko hostinga i domene. Stranice za koje smo odgovorni imaju 99.9% uptime garanciju.</p>
+                </div>
+                <div class="card">
+                    <h3>WooCommerce Shop</h3>
+                    <p style="font-size:0.9rem; margin-top:10px;">Web stranicu za prodaju proizvoda radimo koristeći robustan WooCommerce sustav. Sigurna naplata i lako upravljanje zalihama.</p>
+                </div>
+                <div class="card">
+                    <h3>Analitika i Praćenje</h3>
+                    <p style="font-size:0.9rem; margin-top:10px;">Web stranice koje su uspješne prate svoje performanse. Na vašu web stranicu postavimo Google Analytics 4 da znate odakle dolaze vaši kupci.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding transparent-section" id="faq">
+        <div class="container" style="max-width: 800px;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2>Cijene i <span class="gradient-text">Česta Pitanja</span></h2>
+                <p>Ovdje možete pronaći informacije o cijeni izrade web stranica.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Koja je cijena izrade web stranica u BiH?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p style="padding-bottom:1.5rem;"><strong>Cijena izrade web stranica</strong> nije fiksna već ovisi o vašim potrebama, ali nudimo transparentne pakete:<br><br>
+                    1. <strong>Start Paket (cca 400-600 KM):</strong> Idealno za jednostavne prezentacijske stranice.<br>
+                    2. <strong>Business Paket (cca 800-1200 KM):</strong> Napredne WordPress stranice s unikatnim dizajnom.<br>
+                    3. <strong>Web Shop (od 1500 KM+):</strong> Kompletna online trgovina.<br><br>
+                    Za tačnu ponudu, najbolje je da nas kontaktirate.</p>
+                </div>
+            </div>
+
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><h3>Kako napraviti web stranicu za moje poslovanje?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p style="padding-bottom:1.5rem;">Proces izrade web stranica počinje analizom vaših potreba i ciljeva. Mi radimo sve za vas - od dizajna do lansiranja. Za vašu web stranicu kreiramo custom rješenje koje odgovara vašoj industriji.</p></div></div>
+            
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><h3>Postoji li "besplatna" izrada web stranica?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p style="padding-bottom:1.5rem;">Postoje alati za besplatnu izradu, ali oni nisu profesionalno rješenje za firme. Besplatne stranice se loše rangiraju na Googleu i izgledaju neprofesionalno. Naša <strong>povoljna izrada web stranica</strong> osigurava da dobijete kvalitetan proizvod koji je zapravo vaše vlasništvo.</p></div></div>
+            
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><h3>Koliko traje proces izrade web stranice?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p style="padding-bottom:1.5rem;">Izrada web stranica već može biti završena za 2-4 sedmice za standardne projekte. Kompleksnije web stranice koje zahtijevaju custom funkcionalnosti mogu trajati 6-8 sedmica.</p></div></div>
+            
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><h3>Mogu li sam ažurirati sadržaj (WordPress)?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p style="padding-bottom:1.5rem;">Apsolutno! Specijalizirani smo za <strong>izradu web stranica u WordPressu</strong>. Nakon završetka, dobijate pristup administraciji gdje možete lako mijenjati tekstove, slike i proizvode bez ikakvog znanja kodiranja.</p></div></div>
+            
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><h3>Radite li stranice za turizam?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p style="padding-bottom:1.5rem;">Da, imamo veliko iskustvo u <strong>izradi web stranica za turističke agencije i apartmane</strong>. Ugrađujemo sisteme za rezervacije (booking), kalendare zauzeća i višejezičnost (multilanguage).</p></div></div>
+            
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><h3>Šta je uključeno u cijenu?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p style="padding-bottom:1.5rem;">U cijenu je uključeno: unikatni dizajn, razvoj, mobilna optimizacija, osnovni SEO, prijava na Google, i obuka za korištenje. Nema skrivenih troškova.</p></div></div>
+            
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><h3>Nudite li hosting?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p style="padding-bottom:1.5rem;">Da, nudimo brz i siguran hosting na serverima optimiziranim za BiH tržište.</p></div></div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Spremni ste napraviti <span style="color:white; border-bottom:3px solid white;">Web Stranicu</span> koja donosi rezultate?</h2>
+            <p>Kontaktirajte nas danas za besplatnu konsultaciju i procjenu projekta. Profesionalna izrada web stranica i podrška koja donosi realne rezultate za vaše poslovanje.</p>
+            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+                <a href="#kontakt" class="cta-button-white">Kontaktirajte Nas</a>
+                <a href="#kontakt" class="cta-button-white" style="background:transparent; color:white; border:2px solid white; box-shadow:none;">Zakazite Konsultaciju</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="kontakt">
+        <div class="container footer-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:2rem;">
+            <div class="f-col">
+                <div class="logo-main" style="color:white; margin-bottom:1rem;">Izrada <span class="red-text">Web</span></div>
+                <p>Profesionalna izrada web stranica i dizajn web rješenja.</p>
+            </div>
+            <div class="f-col">
+                <h4>Usluge</h4>
+                <ul><li><a href="#">Izrada Web Sajta</a></li><li><a href="#">Web Shop</a></li><li><a href="#">SEO</a></li></ul>
+            </div>
+            <div class="f-col">
+                <h4>Kontakt</h4>
+                <ul><li>Sarajevo, BiH</li><li>info@izradaweb.ba</li></ul>
+            </div>
+        </div>
+        <div style="text-align: center; opacity: 0.5; padding-top: 2rem; border-top: 1px solid #333; margin-top: 2rem;">
+            &copy; 2025 Izrada Web Stranica BiH. Sva prava zadržana.
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img src="" id="lightbox-img" alt="Full screen">
+    </div>
+
+    <script>
+        // MOBILE MENU
+        function toggleMobileMenu() { document.getElementById('mainNav').classList.toggle('mobile-active'); }
+
+        // MEGA MENU
+        const pills = document.querySelectorAll('.mega-pill');
+        const panels = document.querySelectorAll('.mega-panel');
+        pills.forEach(pill => {
+            pill.addEventListener('mouseenter', () => {
+                pills.forEach(p => p.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+                document.getElementById(pill.dataset.panel).classList.add('active');
+            });
+        });
+
+        // TABS
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) tabcontent[i].classList.remove("active");
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // FAQ
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            item.classList.toggle('active-item');
+            answer.classList.toggle('active');
+            if(answer.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+                if(icon) icon.style.transform = "rotate(180deg)";
+            } else {
+                answer.style.maxHeight = 0;
+                if(icon) icon.style.transform = "rotate(0deg)";
+            }
+        }
+
+        // BACKGROUND BOXES
+        function initBoxes(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            const colors = ["rgba(139, 10, 26, 0.5)", "rgba(155, 89, 182, 0.5)", "rgba(255, 105, 180, 0.5)", "rgba(255, 160, 122, 0.5)"];
+            const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
+            const boxSize = 40; 
+            const cols = Math.ceil(container.offsetWidth / boxSize);
+            const rows = Math.ceil(container.offsetHeight / boxSize);
+            container.style.display = 'grid';
+            container.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+            container.innerHTML = '';
+            for (let i = 0; i < rows * cols; i++) {
+                const cell = document.createElement('div');
+                cell.classList.add('box-row-cell');
+                if (Math.random() > 0.6) cell.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" /></svg>`;
+                cell.addEventListener('mouseenter', () => { cell.style.backgroundColor = getRandomColor(); cell.style.transition = '0s'; });
+                cell.addEventListener('mouseleave', () => { cell.style.backgroundColor = 'transparent'; cell.style.transition = 'background-color 1s ease'; });
+                container.appendChild(cell);
+            }
+        }
+
+        // CAROUSEL
+        function initCarousel() {
+            const container = document.getElementById('carousel-container');
+            const scene = document.getElementById('carousel-scene');
+            const images = ['blissbites.png','chatlino.png','sirka.png','savedigital.png','razlicak1.png','law.png','kliktura.png','gradnja.png',];
+            const count = images.length;
+            const angle = 360 / count;
+            const radius = Math.round((240 / 2) / Math.tan(Math.PI / count)) + 50; 
+            container.innerHTML = ''; 
+            images.forEach((src, i) => {
+                const item = document.createElement('div');
+                item.className = 'carousel-item';
+                item.style.transform = `rotateY(${i * angle}deg) translateZ(${radius}px)`;
+                const img = document.createElement('img'); img.src = src;
+                item.onclick = () => openLightbox(src);
+                item.appendChild(img); container.appendChild(item);
+            });
+            let currentAngle = 0; let startX = 0; let isDragging = false;
+            scene.addEventListener('mousedown', (e) => { isDragging = true; startX = e.clientX; scene.style.cursor = 'grabbing'; });
+            window.addEventListener('mousemove', (e) => { if(!isDragging) return; const deltaX = e.clientX - startX; container.style.transform = `rotateY(${currentAngle + deltaX * 0.5}deg)`; });
+            window.addEventListener('mouseup', (e) => { if(!isDragging) return; isDragging = false; const deltaX = e.clientX - startX; currentAngle += deltaX * 0.5; container.style.transform = `rotateY(${currentAngle}deg)`; scene.style.cursor = 'grab'; });
+            scene.addEventListener('touchstart', (e) => { isDragging = true; startX = e.touches[0].clientX; });
+            window.addEventListener('touchmove', (e) => { if(!isDragging) return; const deltaX = e.touches[0].clientX - startX; container.style.transform = `rotateY(${currentAngle + deltaX * 0.5}deg)`; });
+            window.addEventListener('touchend', (e) => { if(!isDragging) return; isDragging = false; const deltaX = e.changedTouches[0].clientX - startX; currentAngle += deltaX * 0.5; });
+        }
+        function openLightbox(src) { document.getElementById('lightbox').classList.add('active'); document.getElementById('lightbox-img').src = src; }
+        function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
+
+        // HERO 3D (WIREFRAME CUBES)
+        function initHero3D() {
+            const container = document.getElementById('hero-canvas-container');
+            if(!container) return;
+            window.heroContainer = container;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.z = 10; camera.position.y = 2; window.camera = camera;
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            container.appendChild(renderer.domElement);
+            window.renderer = renderer;
+            const group = new THREE.Group();
+            scene.add(group);
+            const geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
+            const material = new THREE.MeshBasicMaterial({ color: 0x8B0A1A, wireframe: true, transparent: true, opacity: 0.4 });
+            const materialSolid = new THREE.MeshBasicMaterial({ color: 0x9B59B6, transparent: true, opacity: 0.05 });
+            const cubes = [];
+            for(let i=0; i<6; i++) {
+                const cube = new THREE.Mesh(geometry, material);
+                cube.position.x = (Math.random() - 0.5) * 10; cube.position.y = (Math.random() - 0.5) * 8; cube.position.z = (Math.random() - 0.5) * 5;
+                cube.rotation.x = Math.random() * Math.PI; cube.rotation.y = Math.random() * Math.PI;
+                const solid = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1.4, 1.4), materialSolid);
+                cube.add(solid); group.add(cube);
+                cubes.push({ mesh: cube, speedX: (Math.random() - 0.5) * 0.01, speedY: (Math.random() - 0.5) * 0.01, rotSpeed: (Math.random() + 0.1) * 0.005 });
+            }
+            let mouseX = 0; let mouseY = 0;
+            document.addEventListener('mousemove', (event) => { mouseX = (event.clientX / window.innerWidth) * 2 - 1; mouseY = -(event.clientY / window.innerHeight) * 2 + 1; });
+            function animate() {
+                requestAnimationFrame(animate);
+                group.rotation.y += (mouseX * 0.5 - group.rotation.y) * 0.05;
+                group.rotation.x += (-mouseY * 0.5 - group.rotation.x) * 0.05;
+                cubes.forEach(item => { item.mesh.rotation.x += item.rotSpeed; item.mesh.rotation.y += item.rotSpeed; item.mesh.position.y += Math.sin(Date.now() * 0.001 + item.mesh.position.x) * 0.005; });
+                renderer.render(scene, camera);
+            }
+            animate();
+        }
+
+        window.addEventListener('load', () => { initBoxes('boxes-grid'); initCarousel(); initHero3D(); });
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                initBoxes('boxes-grid'); initCarousel();
+                if(window.camera && window.renderer && window.heroContainer) {
+                    window.camera.aspect = window.heroContainer.clientWidth / window.heroContainer.clientHeight;
+                    window.camera.updateProjectionMatrix();
+                    window.renderer.setSize(window.heroContainer.clientWidth, window.heroContainer.clientHeight);
+                }
+            }, 250);
+        });
+    </script>
+</body>
+</html>
