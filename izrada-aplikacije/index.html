@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izrada Mobilnih i Web Aplikacija | iOS, Android & SaaS Rješenja</title>
+    <meta name="description" content="Profesionalni razvoj mobilnih (iOS/Android) i web aplikacija. Kreiramo skalabilna softverska rješenja koristeći Flutter, React Native i moderne Cloud tehnologije.">
+    
+    <link rel="canonical" href="https://izradawebstranice.ba/izrada-aplikacije/" />
+      <link rel="icon" type="image/png" href="/icon.png">
+
+
+
+<link rel="apple-touch-icon" href="/icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Razvoj Mobilnih Aplikacija | Od Ideje do App Store-a">
+    <meta property="og:description" content="Trebate aplikaciju za vaš biznis? Nudimo razvoj nativnih i hibridnih rješenja.">
+    <meta property="og:image" content="https://izradawebstranice.ba/app-dev-hero.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+         <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B364LKSGSK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B364LKSGSK');
+</script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Mobile & Web Application Development",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Izrada Web Stranica BiH",
+        "url": "https://izradawebstranice.ba/"
+      },
+      "name": "Razvoj Mobilnih i Web Aplikacija",
+      "description": "Dizajn i programiranje custom softverskih rješenja. Specijalizirani za iOS i Android aplikacije (Flutter/React Native) te kompleksne Web Aplikacije (SaaS).",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "BAM",
+        "price": "3000",
+        "priceValidUntil": "2025-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Bosnia and Herzegovina" },
+        { "@type": "City", "name": "Sarajevo" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Vrste Aplikacija",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "iOS i Android Aplikacije" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SaaS Web Aplikacije" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PWA (Progressive Web Apps)" } }
+        ]
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Koja je razlika između Web stranice i Web aplikacije?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Web stranica je informativna (npr. portfolio), dok je Web Aplikacija interaktivni softver koji rješava probleme (npr. Booking sistem, CRM, Facebook). Aplikacije zahtijevaju baze podataka i kompleksnu logiku."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Koliko košta izrada mobilne aplikacije?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Razvoj aplikacija je kompleksniji od web stranica. Cijene startaju od 3000 KM za jednostavnije MVP verzije, dok složeni sistemi poput Uber-a ili Glovo klonova koštaju znatno više."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Razvijate li za iOS i Android istovremeno?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. Koristimo 'Cross-Platform' tehnologije kao što su Flutter i React Native. To nam omogućava da pišemo jedan kod koji radi savršeno na oba sistema, što vama štedi do 40% budžeta."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* --- KOPIRANI STILOVI (IDENTIČAN DIZAJN) --- */
+        :root {
+            --bordo-main: #8B0A1A;        
+            --bordo-dark: #6B0814;
+            --bordo-light: #A61C2B;       
+            --ljubicasta: #9B59B6;        
+            
+            --bg-body: #ffffff;
+            --bg-section-gray: #fcfcfc;
+            
+            --text-dark: #111111;
+            --text-gray: #555555;
+            
+            --glass-bg: rgba(255, 255, 255, 0.95);
+            --glass-card: rgba(255, 255, 255, 0.9);
+            --glass-border: rgba(0, 0, 0, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-body);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 { font-weight: 800; line-height: 1.2; color: var(--text-dark); }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* Helpers */
+        .red-text { color: var(--bordo-main); }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--bordo-main), var(--ljubicasta));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .section-padding { padding: 6rem 1rem; position: relative; z-index: 2; }
+        .container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 5; padding-left: 1rem; padding-right: 1rem; }
+
+        /* --- HEADER --- */
+        header {
+            position: sticky; top: 1.5rem; z-index: 1000; width: 90%; max-width: 1150px; margin: 0 auto;
+            border-radius: 50px; background: var(--glass-bg); backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border); box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease;
+        }
+        .nav-container { padding: 0.7rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-icon {
+            width: 42px; height: 42px; background: linear-gradient(135deg, var(--bordo-main), var(--bordo-light));
+            color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; box-shadow: 0 4px 15px rgba(139, 10, 26, 0.3);
+        }
+        .logo-text-col { display: flex; flex-direction: column; line-height: 1; }
+        .logo-main { font-size: 1.2rem; font-weight: 800; color: var(--text-dark); text-transform: uppercase; letter-spacing: -0.5px; }
+        .logo-sub { font-family: 'Dancing Script', cursive; font-size: 1.1rem; color: var(--bordo-main); margin-top: -2px; }
+
+        nav ul.desktop-menu { display: flex; gap: 2rem; align-items: center; }
+        nav a.nav-link { color: var(--text-dark); font-weight: 600; font-size: 0.95rem; position: relative; padding: 15px 0; }
+        nav a.nav-link:hover { color: var(--bordo-main); }
+
+        /* Dropdown */
+        .mega-dropdown-parent { position: relative; }
+        .mega-dropdown-parent::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 20px; background: transparent; }
+        .dropdown-menu {
+            display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px);
+            background: white; width: 300px;
+            border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            z-index: 900; border-top: 4px solid var(--bordo-main); padding: 1rem; opacity: 0; transition: all 0.3s ease;
+        }
+        .mega-dropdown-parent:hover .dropdown-menu { display: block; opacity: 1; transform: translateX(-50%) translateY(0); }
+        .dropdown-link { display: block; padding: 0.8rem; color: var(--text-gray); font-weight: 500; border-radius: 8px; }
+        .dropdown-link:hover { background: #f3e8ff; color: var(--bordo-main); padding-left: 1.2rem; }
+
+        /* BUTTONS */
+        .cta-button {
+            display: inline-block; padding: 0.75rem 1.8rem; border-radius: 50px;
+            color: white; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px;
+            background: linear-gradient(90deg, var(--bordo-main) 0%, var(--ljubicasta) 100%);
+            box-shadow: 0 5px 15px rgba(139, 10, 26, 0.3); border: none; cursor: pointer; transition: 0.4s;
+        }
+        .cta-button:hover { box-shadow: 0 8px 25px rgba(155, 89, 182, 0.4); transform: translateY(-2px); }
+
+        /* --- GLOBAL BACKGROUND --- */
+        #global-boxes-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; 
+            overflow: hidden; background-color: var(--bg-body); pointer-events: none; 
+        }
+        .boxes-core-wrapper {
+            position: absolute; top: 50%; left: 50%; width: 150vw; height: 150vh; 
+            display: flex; flex-wrap: wrap; transform: translate(-50%, -50%) skewX(-48deg) skewY(14deg) scale(0.675);
+            pointer-events: auto;
+        }
+        .box-row-cell {
+            width: 4rem; height: 2rem; border-left: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06);
+            position: relative; transition: background-color 0s;
+        }
+        .box-row-cell svg {
+            position: absolute; top: -10px; left: -10px; width: 1.5rem; height: 1rem;
+            opacity: 0; pointer-events: none; color: var(--bordo-main); transition: opacity 0.3s;
+        }
+        .box-row-cell:hover svg { opacity: 1; }
+        .transparent-section { background-color: transparent; }
+
+        /* --- HERO SECTION (Left Text / Right Image) --- */
+        .service-hero-section {
+            padding: 8rem 1rem 6rem; position: relative; overflow: hidden;
+            background: radial-gradient(circle at 70% 50%, #fff0f5 0%, #ffffff 70%); 
+        }
+        .service-hero-grid {
+            display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 4rem;
+        }
+        .hero-img-container {
+            position: relative; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 20px 50px rgba(139, 10, 26, 0.15); transform: perspective(1000px) rotateY(-5deg); transition: 0.5s;
+        }
+        .hero-img-container:hover { transform: perspective(1000px) rotateY(0deg); }
+        .hero-img-container img { width: 100%; height: auto; display: block; }
+        
+        /* --- CARDS & UI --- */
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; position: relative; z-index: 2; }
+        .card {
+            background: var(--glass-card); backdrop-filter: blur(8px);
+            padding: 2rem; border-radius: 16px; border: 1px solid #eee;
+            transition: 0.3s; height: 100%; display: flex; flex-direction: column;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--bordo-main); box-shadow: 0 15px 40px rgba(139, 10, 26, 0.08); }
+        .card-icon {
+            width: 60px; height: 60px; background: #fff5f7; border-radius: 15px;
+            display: flex; align-items: center; justify-content: center; font-size: 1.8rem;
+            color: var(--bordo-main); margin-bottom: 1.5rem;
+        }
+
+        /* --- TECH STACK (New Style for Apps) --- */
+        .tech-stack-container {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 2rem;
+        }
+        .tech-pill {
+            padding: 0.8rem 1.5rem; border-radius: 50px; background: white; 
+            border: 1px solid #eee; font-weight: 600; color: #555; display: flex; align-items: center; gap: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.3s;
+        }
+        .tech-pill:hover { transform: translateY(-3px); border-color: var(--bordo-main); color: var(--bordo-main); }
+        .tech-pill i { font-size: 1.2rem; }
+
+        /* --- PROCESS --- */
+        .process-container { max-width: 900px; margin: 0 auto; position: relative; padding-left: 20px; }
+        .process-line { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, var(--bordo-main), var(--ljubicasta)); border-radius: 2px; }
+        .process-step { position: relative; margin-bottom: 3rem; padding-left: 40px; }
+        .step-num {
+            position: absolute; left: -23px; top: 0; width: 50px; height: 50px;
+            background: linear-gradient(135deg, var(--bordo-main), var(--bordo-light));
+            color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 1.2rem; border: 4px solid white; box-shadow: 0 5px 15px rgba(139, 10, 26, 0.35);
+        }
+        .step-content { background: var(--glass-card); backdrop-filter: blur(5px); padding: 2rem; border-radius: 12px; border: 1px solid #eee; transition: 0.3s; }
+        .step-content:hover { border-color: var(--bordo-main); transform: translateX(10px); }
+
+        /* --- FAQ --- */
+        .faq-item { margin-bottom: 1rem; border: 1px solid #eee; border-radius: 12px; background: var(--glass-card); backdrop-filter: blur(5px); overflow: hidden; transition: 0.3s; }
+        .faq-question { padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
+        .faq-question h3 { margin: 0; font-size: 1.1rem; font-weight: 700; color: var(--text-dark); transition: 0.3s; }
+        .faq-item.active-item { border-color: var(--bordo-main); box-shadow: 0 5px 15px rgba(139, 10, 26, 0.05); }
+        .faq-item.active-item .faq-question { background: #fff5f7; }
+        .faq-item.active-item .faq-question h3 { color: var(--bordo-main); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 1.5rem; color: #666; }
+        .faq-answer.active { padding: 1.5rem; border-top: 1px solid #f0f0f0; }
+
+        /* --- CTA --- */
+        .cta-section {
+            margin-top: 6rem; background: linear-gradient(135deg, var(--bordo-main), #4a0e16);
+            color: white; text-align: center; padding: 5rem 1rem; position: relative; z-index: 10;
+            border-radius: 30px 30px 0 0; box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
+        }
+        .cta-button-white {
+            background: white; color: var(--bordo-main); font-weight: 800; padding: 1rem 3rem; border-radius: 50px;
+            text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); transition: 0.3s; display: inline-block;
+        }
+        .cta-button-white:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); color: var(--ljubicasta); }
+
+        /* --- FOOTER --- */
+        footer { background: #111; color: #888; padding: 5rem 1rem 2rem; }
+        .f-col h4 { color: white; margin-bottom: 1.5rem; }
+        .f-col a { color: #888; display: block; margin-bottom: 0.5rem; }
+        .f-col a:hover { color: var(--bordo-main); }
+        .mobile-menu-btn { display: none; border: none; background: none; font-size: 1.5rem; cursor: pointer; color: var(--text-dark); }
+
+        /* --- MOBILE --- */
+        @media (max-width: 991px) {
+            .service-hero-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+            .hero-img-container { width: 100%; max-width: 500px; margin: 0 auto; transform: none; }
+            .hero-text { order: 1; }
+            .hero-img-container { order: 2; }
+            
+            nav ul.desktop-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 0 0 16px 16px; flex-direction: column; align-items: flex-start; z-index: 2000; }
+            nav ul.desktop-menu.mobile-active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .mega-dropdown-parent:hover .dropdown-menu { display: none; }
+            .grid-cards { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="logo-text-col">
+                    <span class="logo-main">Izrada <span class="red-text">Web</span></span>
+                    <span class="logo-sub">stranice</span>
+                </div>
+            </a>
+            
+            <nav>
+                <ul class="desktop-menu" id="mainNav">
+                    <li><a href="index.html" class="nav-link">Početna</a></li>
+                    <li class="mega-dropdown-parent">
+                        <a href="index.html#usluge" class="nav-link">Usluge <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px; color: var(--ljubicasta);"></i></a>
+                        <div class="dropdown-menu">
+                              <a href="/izrada-wordpress-stranice/" class="dropdown-link">Izrada WordPress stranice</a>
+                            <a href="/izrada-web-shopa/" class="dropdown-link">Izrada online prodavnice</a>
+                            <a href="/seo-optimizacija/" class="dropdown-link">SEO Optimizacija & Pozicioniranje</a>
+                            <a href="/redizajn/" class="dropdown-link">Redizajn web stranice</a>
+                            <a href="/odrzavanje/" class="dropdown-link">Održavanje & Sigurnost</a>
+                            <a href="/izrada-aplikacije/" class="dropdown-link">Mobilne aplikacije</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#portfolio" class="nav-link">Radovi</a></li>
+                    <li><a href="index.html#proces" class="nav-link">Proces</a></li>
+                    <li><a href="index.html#faq" class="nav-link">Blog</a></li>
+                    <li><a href="/kontakt/" class="nav-link">Kontakt</a></li>
+                    <li><a href="/kontakt/" class="cta-button">Cijena Izrade</a></li>
+                </ul>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <div id="global-boxes-bg"><div class="boxes-core-wrapper" id="boxes-grid"></div></div>
+
+    <section class="service-hero-section">
+        <div class="container service-hero-grid">
+            <div class="hero-text">
+                <div class="floating-badge"><i class="fas fa-mobile-alt" style="color:var(--bordo-main); margin-right:6px; font-size:1.1rem;"></i> iOS, Android & SaaS Rješenja</div>
+                <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">Razvoj <span class="gradient-text">Mobilnih i Web Aplikacija</span> po Mjeri</h1>
+                <p style="font-size: 1.15rem; color: #666; margin-bottom: 2.5rem; max-width: 95%;">
+                    Pretvaramo vaše ideje u funkcionalan softver. Bilo da trebate mobilnu aplikaciju za <strong>App Store i Google Play</strong> ili kompleksnu Web Aplikaciju (SaaS) za upravljanje biznisom. Naša rješenja su skalabilna, sigurna i dizajnirana da traju.
+                </p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#cijene" class="cta-button">Procjena Projekta</a>
+                    <a href="#tehnologije" class="cta-button" style="background: white; color: var(--text-dark); border: 2px solid var(--bordo-main); box-shadow: none;">Tehnologije</a>
+                </div>
+            </div>
+            <div class="hero-img-container">
+                <img src="https://images.unsplash.com/photo-1512941937669-90a1b5bbb695?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Razvoj mobilnih aplikacija UI/UX" />
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding transparent-section" id="tehnologije">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2>Moderne Tehnologije koje <span class="gradient-text">Koristimo</span></h2>
+                <p>Koristimo najnovije "Cross-Platform" okvire kako bismo uštedjeli vaše vrijeme i novac, bez gubitka performansi.</p>
+                
+                <div class="tech-stack-container">
+                    <div class="tech-pill"><i class="fab fa-react" style="color:#61DBFB;"></i> React Native</div>
+                    <div class="tech-pill"><i class="fas fa-code" style="color:#42A5F5;"></i> Flutter</div>
+                    <div class="tech-pill"><i class="fab fa-laravel" style="color:#FF2D20;"></i> Laravel</div>
+                    <div class="tech-pill"><i class="fab fa-node-js" style="color:#68A063;"></i> Node.js</div>
+                    <div class="tech-pill"><i class="fas fa-database" style="color:#F29111;"></i> MySQL & Firebase</div>
+                    <div class="tech-pill"><i class="fab fa-aws" style="color:#FF9900;"></i> AWS Cloud</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding transparent-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2>Šta Vaša Aplikacija <span class="gradient-text">Može Raditi?</span></h2>
+                <p>Web aplikacije i mobilne aplikacije nude interaktivnost koju obični sajtovi nemaju.</p>
+            </div>
+            
+            <div class="grid-cards">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-bell"></i></div>
+                    <h3>Push Notifikacije</h3>
+                    <p>Direktna komunikacija sa korisnicima. Pošaljite obavijest o akciji ili novosti direktno na ekran njihovog telefona, čak i kad je aplikacija zatvorena.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Geolokacija i Mape</h3>
+                    <p>Integracija sa <strong>Google Maps API</strong>. Praćenje dostave uživo, pronalazak najbliže poslovnice ili check-in funkcionalnosti.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-wifi"></i></div>
+                    <h3>Offline Režim Rada</h3>
+                    <p>Za razliku od web stranica, dobro dizajnirana mobilna aplikacija može pružiti osnovne informacije i funkcionalnosti čak i bez internet konekcije.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-users-cog"></i></div>
+                    <h3>Korisnički Profili</h3>
+                    <p>Napredno upravljanje korisnicima. Registracija putem Emaila, Google-a ili Facebook-a. Historija narudžbi, postavke profila i chat podrška.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding transparent-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2>Od Ideje do <span class="gradient-text">App Store-a</span></h2>
+                <p>Softverski razvoj je kompleksan, ali naš proces ga čini transparentnim i predvidivim.</p>
+            </div>
+            <div class="process-container">
+                <div class="process-line"></div>
+                <div class="process-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>Specifikacija i Wireframing</h3>
+                        <p>Definišemo logiku aplikacije. Kreiramo "Wireframe" skice ekrana kako bismo vizualizirali korisničko iskustvo (UX) prije pisanja koda.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>UI Dizajn i Prototip</h3>
+                        <p>Dizajniramo izgled aplikacije u visokoj rezoluciji. Kreiramo klikabilni prototip da osjetite kako će aplikacija raditi.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>Razvoj MVP Verzije</h3>
+                        <p>Programiramo <strong>MVP (Minimum Viable Product)</strong>. To je prva verzija aplikacije sa ključnim funkcijama, spremna za testiranje na tržištu.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h3>Testiranje i Lansiranje</h3>
+                        <p>Nakon rigoroznog testiranja (QA), objavljujemo aplikaciju na <strong>Apple App Store</strong> i <strong>Google Play Store</strong> ili je postavljamo na vaš server.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding transparent-section" id="faq">
+        <div class="container" style="max-width: 800px;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2>Pitanja o <span class="gradient-text">Aplikacijama</span></h2>
+                <p>Tehnički detalji i troškovi razvoja.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Koja je razlika između Web stranice i Web aplikacije?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p style="padding-bottom:1.5rem;">Web stranica je uglavnom informativna (tekst, slike). <strong>Web Aplikacija</strong> je softver kojem pristupate kroz browser (npr. Facebook, Gmail, Booking). Aplikacije imaju kompleksnu logiku, baze podataka i interakciju s korisnikom.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Koliko košta izrada mobilne aplikacije?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p style="padding-bottom:1.5rem;">Razvoj aplikacija zahtijeva više vremena od web stranica. Cijene za jednostavnije aplikacije kreću od <strong>3000 KM</strong>, dok kompleksni sistemi (poput Ubera ili Glovo klonova) koštaju znatno više. Kontaktirajte nas za procjenu.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Radite li iOS i Android istovremeno?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p style="padding-bottom:1.5rem;">Da. Koristimo <strong>Hibridne (Cross-Platform)</strong> tehnologije poput Flutter-a i React Native-a. To nam omogućava da pišemo jedan kod koji radi savršeno na oba sistema, što vama štedi do 40% budžeta.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Šta je potrebno za održavanje aplikacije?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p style="padding-bottom:1.5rem;">Aplikacije zahtijevaju redovno ažuriranje kako bi ostale kompatibilne sa novim verzijama iOS-a i Android-a, te održavanje servera (Backend) i baze podataka.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section class="prefooter-section">
+        <div class="container prefooter-content">
+            <div class="pf-text">
+                <h2>Imate Ideju za <span class="gradient-text-light">Aplikaciju?</span></h2>
+                <p>Ne dopustite da ideja ostane samo na papiru. Zakažite besplatne konsultacije gdje ćemo procijeniti tehničku izvedivost i cijenu vašeg projekta.</p>
+            </div>
+            <div class="pf-cta">
+                <a href="/kontakt/" class="pf-button">Zatražite Ponudu <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="f-col-brand">
+                    <a href="index.html" class="footer-logo">
+                        <div class="f-logo-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="f-logo-text">
+                            <span class="f-main">Izrada <span style="color:#9B59B6;">Web</span></span>
+                            <span class="f-sub">stranice</span>
+                        </div>
+                    </a>
+                    <p class="footer-desc">Profesionalna agencija za web dizajn i digitalni marketing. Vaš partner za online uspjeh u BiH.</p>
+<div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        
+                        <a href="https://wa.me/38762196206" target="_blank" class="chat-icon whatsapp" title="Pišite na WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        
+                        <a href="viber://chat?number=%2B38762196206" target="_blank" class="chat-icon viber" title="Pišite na Viber">
+                            <i class="fab fa-viber"></i>
+                        </a>
+                        
+                        <a href="https://t.me/ibrakaa" target="_blank" class="chat-icon telegram" title="Pišite na Telegram">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="f-col-links">
+                    <h4>Naše Usluge</h4>
+                    <ul>
+                        <li><a href="#">Izrada WordPress Stranica</a></li>
+                        <li><a href="#">Izrada Web Shopa</a></li>
+                        <li><a href="#">SEO Optimizacija</a></li>
+                        <li><a href="#">Redizajn Web Stranica</a></li>
+                        <li><a href="#">Mobilne Aplikacije</a></li>
+                        <li><a href="#">Održavanje Sajtova</a></li>
+                    </ul>
+                </div>
+
+                <div class="f-col-links">
+                    <h4>Kompanija</h4>
+                    <ul>
+                        <li><a href="index.html#portfolio">Naši Radovi</a></li>
+                        <li><a href="index.html#proces">Proces Izrade</a></li>
+                        <li><a href="index.html#faq">Česta Pitanja</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                        <li><a href="#">Politika Privatnosti</a></li>
+                    </ul>
+                </div>
+
+                <div class="f-col-contact">
+                    <h4>Kontaktirajte Nas</h4>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sarajevo 71000, BiH</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+38762196206">+387 62 196 206</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@izradawebstranice.ba">info@izradawebstranice.ba</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Izrada Web Stranica BiH. Sva prava zadržana.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        /* --- PREFOOTER STYLES --- */
+        .prefooter-section {
+            background: #1a1a1a; /* Tamna podloga */
+            background-image: radial-gradient(circle at 100% 0%, #2c1e30 0%, #1a1a1a 50%);
+            padding: 5rem 1rem;
+            margin-top: 6rem;
+            position: relative;
+            border-bottom: 1px solid #333;
+        }
+        .prefooter-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .pf-text h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .gradient-text-light {
+            background: linear-gradient(90deg, #9B59B6, #D2B4DE); /* Ljubičasti gradient */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .pf-text p {
+            color: #aaa;
+            font-size: 1.1rem;
+            max-width: 600px;
+        }
+        .pf-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #8B0A1A, #9B59B6); /* Bordo-Ljubičasto */
+            color: white;
+            font-weight: 700;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(155, 89, 182, 0.3);
+            transition: 0.3s;
+        }
+        .pf-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(155, 89, 182, 0.5);
+        }
+
+/* --- FOOTER STYLES --- */
+        footer {
+            background: #111;
+            color: #bbb;
+            padding: 5rem 1rem 1rem;
+            font-size: 0.95rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        /* Brand Column */
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+        }
+        .f-logo-icon {
+            width: 40px; height: 40px;
+            background: linear-gradient(135deg, #8B0A1A, #9B59B6);
+            color: white;
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+        }
+        .f-logo-text { display: flex; flex-direction: column; line-height: 1; }
+        .f-main { font-size: 1.1rem; font-weight: 800; color: white; text-transform: uppercase; }
+        .f-sub { font-family: 'Dancing Script', cursive; font-size: 1rem; color: #9B59B6; }
+        
+        .footer-desc { margin-bottom: 1.5rem; line-height: 1.6; }
+        
+        /* SOCIAL & CHAT ICONS */
+        .social-links { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+        .social-links a {
+            width: 38px; height: 38px;
+            background: #222;
+            color: white;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+            transition: 0.3s;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+        /* Hover efekti za standardne social icons */
+        .social-links a:not(.chat-icon):hover { background: #9B59B6; transform: translateY(-3px); }
+
+        /* Specifične boje za chat aplikacije na hover */
+        .chat-icon.whatsapp:hover { background: #25D366; transform: translateY(-3px); }
+        .chat-icon.viber:hover { background: #7360f2; transform: translateY(-3px); }
+        .chat-icon.telegram:hover { background: #0088cc; transform: translateY(-3px); }
+
+        /* Links Columns */
+        footer h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        footer h4::after {
+            content: ''; position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: #9B59B6;
+        }
+        
+        footer ul li { margin-bottom: 0.8rem; }
+        footer ul a { color: #bbb; transition: 0.3s; text-decoration: none; }
+        footer ul a:hover { color: #9B59B6; padding-left: 5px; }
+
+        /* Contact Column */
+        .contact-list li {
+            display: flex; align-items: flex-start; gap: 12px; margin-bottom: 1rem;
+        }
+        .contact-list i { color: #9B59B6; margin-top: 4px; }
+        .contact-list a:hover { color: white; padding-left: 0; }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            border-top: 1px solid #222;
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.6;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+        }
+    </style>
+
+    <script>
+        function toggleMobileMenu() { document.getElementById('mainNav').classList.toggle('mobile-active'); }
+
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            item.classList.toggle('active-item');
+            answer.classList.toggle('active');
+            if(answer.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+                if(icon) icon.style.transform = "rotate(180deg)";
+            } else {
+                answer.style.maxHeight = 0;
+                if(icon) icon.style.transform = "rotate(0deg)";
+            }
+        }
+
+        // BACKGROUND BOXES
+        function initBoxes(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            const colors = ["rgba(139, 10, 26, 0.5)", "rgba(155, 89, 182, 0.5)", "rgba(255, 105, 180, 0.5)", "rgba(255, 160, 122, 0.5)"];
+            const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
+            const boxSize = 40; 
+            const cols = Math.ceil(container.offsetWidth / boxSize);
+            const rows = Math.ceil(container.offsetHeight / boxSize);
+            container.style.display = 'grid';
+            container.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+            container.innerHTML = '';
+            for (let i = 0; i < rows * cols; i++) {
+                const cell = document.createElement('div');
+                cell.classList.add('box-row-cell');
+                if (Math.random() > 0.6) cell.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" /></svg>`;
+                cell.addEventListener('mouseenter', () => { cell.style.backgroundColor = getRandomColor(); cell.style.transition = '0s'; });
+                cell.addEventListener('mouseleave', () => { cell.style.backgroundColor = 'transparent'; cell.style.transition = 'background-color 1s ease'; });
+                container.appendChild(cell);
+            }
+        }
+        window.addEventListener('load', () => { initBoxes('boxes-grid'); });
+        window.addEventListener('resize', () => { setTimeout(() => { initBoxes('boxes-grid'); }, 250); });
+    </script>
+</body>
+</html>
