@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Održavanje Web Stranica BiH | Sigurnost, Update & Backup Rješenja</title>
+    <meta name="description" content="Profesionalno održavanje web stranica. Nudimo 24/7 monitoring, zaštitu od hakiranja (WAF), redovno ažuriranje WordPress-a i off-site backup. Spavajte mirno.">
+    
+    <link rel="canonical" href="https://izradawebstranice.ba/odrzavanje/" />
+      <link rel="icon" type="image/png" href="/icon.png">
+
+
+
+<link rel="apple-touch-icon" href="/icon.png">
+
+    <meta property="og:type" content="service">
+    <meta property="og:title" content="Održavanje i Sigurnost Web Stranica | Zaštitite Svoj Biznis">
+    <meta property="og:description" content="Vaš sajt je meta 24/7. Mi ga štitimo, ubrzavamo i ažuriramo dok vi vodite biznis.">
+    <meta property="og:image" content="https://izradawebstranice.ba/security-hero.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+         <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B364LKSGSK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B364LKSGSK');
+</script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Web Maintenance & Security",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Izrada Web Stranica BiH",
+        "url": "https://izradawebstranice.ba/"
+      },
+      "name": "Održavanje i Sigurnost Web Stranica",
+      "description": "Mjesečno održavanje web sistema. Uključuje ažuriranje CMS-a (WordPress), sigurnosni monitoring (Wordfence), dnevni backup i optimizaciju brzine.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "BAM",
+        "price": "50",
+        "priceValidUntil": "2025-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "billingIncrement": "monthly"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Bosnia and Herzegovina" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Paketi Održavanja",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Osnovno Sigurnosno Održavanje" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Premium Održavanje Shopova" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Čišćenje Hakiranih Stranica" } }
+        ]
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Zašto moram plaćati mjesečno održavanje?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Web stranica je softver koji je stalno izložen internetu. Bez redovnog ažuriranja PHP verzije i pluginova, stranica postaje ranjiva na napade, usporava se ili prestaje raditi. Mjesečno održavanje je vaša polica osiguranja."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Šta ako mi neko hakira stranicu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ako ste na našem održavanju, čišćenje virusa (Malware removal) je besplatno. Vraćamo stranicu iz 'čistog' backupa koji čuvamo na vanjskom serveru i dodatno pojačavamo zaštitu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Koliko često radite Backup?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Radimo dnevne ili sedmične sigurnosne kopije (ovisno o paketu). Kopije se čuvaju na 'Off-site' Cloud serveru, što znači da su podaci sigurni čak i ako glavni server padne."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* --- KOPIRANI STILOVI (IDENTIČAN DIZAJN) --- */
+        :root {
+            --bordo-main: #8B0A1A;        
+            --bordo-dark: #6B0814;
+            --bordo-light: #A61C2B;       
+            --ljubicasta: #9B59B6;        
+            
+            --bg-body: #ffffff;
+            --bg-section-gray: #fcfcfc;
+            
+            --text-dark: #111111;
+            --text-gray: #555555;
+            
+            --glass-bg: rgba(255, 255, 255, 0.95);
+            --glass-card: rgba(255, 255, 255, 0.9);
+            --glass-border: rgba(0, 0, 0, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-body);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 { font-weight: 800; line-height: 1.2; color: var(--text-dark); }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* Helpers */
+        .red-text { color: var(--bordo-main); }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--bordo-main), var(--ljubicasta));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .section-padding { padding: 6rem 1rem; position: relative; z-index: 2; }
+        .container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 5; padding-left: 1rem; padding-right: 1rem; }
+
+        /* --- HEADER --- */
+        header {
+            position: sticky; top: 1.5rem; z-index: 1000; width: 90%; max-width: 1150px; margin: 0 auto;
+            border-radius: 50px; background: var(--glass-bg); backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border); box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease;
+        }
+        .nav-container { padding: 0.7rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-icon {
+            width: 42px; height: 42px; background: linear-gradient(135deg, var(--bordo-main), var(--bordo-light));
+            color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; box-shadow: 0 4px 15px rgba(139, 10, 26, 0.3);
+        }
+        .logo-text-col { display: flex; flex-direction: column; line-height: 1; }
+        .logo-main { font-size: 1.2rem; font-weight: 800; color: var(--text-dark); text-transform: uppercase; letter-spacing: -0.5px; }
+        .logo-sub { font-family: 'Dancing Script', cursive; font-size: 1.1rem; color: var(--bordo-main); margin-top: -2px; }
+
+        nav ul.desktop-menu { display: flex; gap: 2rem; align-items: center; }
+        nav a.nav-link { color: var(--text-dark); font-weight: 600; font-size: 0.95rem; position: relative; padding: 15px 0; }
+        nav a.nav-link:hover { color: var(--bordo-main); }
+
+        /* Dropdown */
+        .mega-dropdown-parent { position: relative; }
+        .mega-dropdown-parent::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 20px; background: transparent; }
+        .dropdown-menu {
+            display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px);
+            background: white; width: 300px;
+            border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            z-index: 900; border-top: 4px solid var(--bordo-main); padding: 1rem; opacity: 0; transition: all 0.3s ease;
+        }
+        .mega-dropdown-parent:hover .dropdown-menu { display: block; opacity: 1; transform: translateX(-50%) translateY(0); }
+        .dropdown-link { display: block; padding: 0.8rem; color: var(--text-gray); font-weight: 500; border-radius: 8px; }
+        .dropdown-link:hover { background: #f3e8ff; color: var(--bordo-main); padding-left: 1.2rem; }
+
+        /* BUTTONS */
+        .cta-button {
+            display: inline-block; padding: 0.75rem 1.8rem; border-radius: 50px;
+            color: white; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px;
+            background: linear-gradient(90deg, var(--bordo-main) 0%, var(--ljubicasta) 100%);
+            box-shadow: 0 5px 15px rgba(139, 10, 26, 0.3); border: none; cursor: pointer; transition: 0.4s;
+        }
+        .cta-button:hover { box-shadow: 0 8px 25px rgba(155, 89, 182, 0.4); transform: translateY(-2px); }
+
+        /* --- GLOBAL BACKGROUND --- */
+        #global-boxes-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; 
+            overflow: hidden; background-color: var(--bg-body); pointer-events: none; 
+        }
+        .boxes-core-wrapper {
+            position: absolute; top: 50%; left: 50%; width: 150vw; height: 150vh; 
+            display: flex; flex-wrap: wrap; transform: translate(-50%, -50%) skewX(-48deg) skewY(14deg) scale(0.675);
+            pointer-events: auto;
+        }
+        .box-row-cell {
+            width: 4rem; height: 2rem; border-left: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06);
+            position: relative; transition: background-color 0s;
+        }
+        .box-row-cell svg {
+            position: absolute; top: -10px; left: -10px; width: 1.5rem; height: 1rem;
+            opacity: 0; pointer-events: none; color: var(--bordo-main); transition: opacity 0.3s;
+        }
+        .box-row-cell:hover svg { opacity: 1; }
+        .transparent-section { background-color: transparent; }
+
+        /* --- HERO SECTION (Left Text / Right Image) --- */
+        .service-hero-section {
+            padding: 8rem 1rem 6rem; position: relative; overflow: hidden;
+            background: radial-gradient(circle at 70% 50%, #fff0f5 0%, #ffffff 70%); 
+        }
+        .service-hero-grid {
+            display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 4rem;
+        }
+        .hero-img-container {
+            position: relative; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 20px 50px rgba(139, 10, 26, 0.15); transform: perspective(1000px) rotateY(-5deg); transition: 0.5s;
+        }
+        .hero-img-container:hover { transform: perspective(1000px) rotateY(0deg); }
+        .hero-img-container img { width: 100%; height: auto; display: block; }
+        
+        /* --- CARDS & UI --- */
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; position: relative; z-index: 2; }
+        .card {
+            background: var(--glass-card); backdrop-filter: blur(8px);
+            padding: 2rem; border-radius: 16px; border: 1px solid #eee;
+            transition: 0.3s; height: 100%; display: flex; flex-direction: column;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--bordo-main); box-shadow: 0 15px 40px rgba(139, 10, 26, 0.08); }
+        .card-icon {
+            width: 60px; height: 60px; background: #fff5f7; border-radius: 15px;
+            display: flex; align-items: center; justify-content: center; font-size: 1.8rem;
+            color: var(--bordo-main); margin-bottom: 1.5rem;
+        }
+
+        /* --- NEW: MAINTENANCE TABLE (Comparison) --- */
+        .maintenance-table-wrapper {
+            background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.05); overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05); margin-top: 2rem;
+        }
+        .m-row { display: grid; grid-template-columns: 2fr 1fr 1fr; padding: 1.5rem; border-bottom: 1px solid #eee; align-items: center; }
+        .m-head { background: #fafafa; font-weight: 800; color: var(--text-dark); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.5px; }
+        .m-row:last-child { border-bottom: none; }
+        .m-feature { display: flex; align-items: center; gap: 15px; font-weight: 600; color: #444; }
+        .m-feature i { color: var(--bordo-main); font-size: 1.2rem; }
+        .m-check { color: #27ae60; font-size: 1.2rem; }
+        .m-cross { color: #e74c3c; font-size: 1.2rem; }
+        
+        /* --- PROCESS --- */
+        .process-container { max-width: 900px; margin: 0 auto; position: relative; padding-left: 20px; }
+        .process-line { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, var(--bordo-main), var(--ljubicasta)); border-radius: 2px; }
+        .process-step { position: relative; margin-bottom: 3rem; padding-left: 40px; }
+        .step-num {
+            position: absolute; left: -23px; top: 0; width: 50px; height: 50px;
+            background: linear-gradient(135deg, var(--bordo-main), var(--bordo-light));
+            color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 1.2rem; border: 4px solid white; box-shadow: 0 5px 15px rgba(139, 10, 26, 0.35);
+        }
+        .step-content { background: var(--glass-card); backdrop-filter: blur(5px); padding: 2rem; border-radius: 12px; border: 1px solid #eee; transition: 0.3s; }
+        .step-content:hover { border-color: var(--bordo-main); transform: translateX(10px); }
+
+        /* --- FAQ --- */
+        .faq-item { margin-bottom: 1rem; border: 1px solid #eee; border-radius: 12px; background: var(--glass-card); backdrop-filter: blur(5px); overflow: hidden; transition: 0.3s; }
+        .faq-question { padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
+        .faq-question h3 { margin: 0; font-size: 1.1rem; font-weight: 700; color: var(--text-dark); transition: 0.3s; }
+        .faq-item.active-item { border-color: var(--bordo-main); box-shadow: 0 5px 15px rgba(139, 10, 26, 0.05); }
+        .faq-item.active-item .faq-question { background: #fff5f7; }
+        .faq-item.active-item .faq-question h3 { color: var(--bordo-main); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 1.5rem; color: #666; }
+        .faq-answer.active { padding: 1.5rem; border-top: 1px solid #f0f0f0; }
+
+        /* --- CTA --- */
+        .cta-section {
+            margin-top: 6rem; background: linear-gradient(135deg, var(--bordo-main), #4a0e16);
+            color: white; text-align: center; padding: 5rem 1rem; position: relative; z-index: 10;
+            border-radius: 30px 30px 0 0; box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
+        }
+        .cta-button-white {
+            background: white; color: var(--bordo-main); font-weight: 800; padding: 1rem 3rem; border-radius: 50px;
+            text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); transition: 0.3s; display: inline-block;
+        }
+        .cta-button-white:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); color: var(--ljubicasta); }
+
+        /* --- FOOTER --- */
+        footer { background: #111; color: #888; padding: 5rem 1rem 2rem; }
+        .f-col h4 { color: white; margin-bottom: 1.5rem; }
+        .f-col a { color: #888; display: block; margin-bottom: 0.5rem; }
+        .f-col a:hover { color: var(--bordo-main); }
+        .mobile-menu-btn { display: none; border: none; background: none; font-size: 1.5rem; cursor: pointer; color: var(--text-dark); }
+
+        /* --- MOBILE --- */
+        @media (max-width: 991px) {
+            .service-hero-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+            .hero-img-container { width: 100%; max-width: 500px; margin: 0 auto; transform: none; }
+            .hero-text { order: 1; }
+            .hero-img-container { order: 2; }
+            
+            nav ul.desktop-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 0 0 16px 16px; flex-direction: column; align-items: flex-start; z-index: 2000; }
+            nav ul.desktop-menu.mobile-active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .mega-dropdown-parent:hover .dropdown-menu { display: none; }
+            .grid-cards { grid-template-columns: 1fr; }
+            
+            .m-row { grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9rem; }
+            .m-head { display: none; } /* Hide table header on mobile */
+            .m-feature { grid-column: 1 / -1; margin-bottom: 5px; background: #f9f9f9; padding: 5px; border-radius: 4px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="logo-text-col">
+                    <span class="logo-main">Izrada <span class="red-text">Web</span></span>
+                    <span class="logo-sub">stranice</span>
+                </div>
+            </a>
+            
+            <nav>
+                <ul class="desktop-menu" id="mainNav">
+                    <li><a href="index.html" class="nav-link">Početna</a></li>
+                    <li class="mega-dropdown-parent">
+                        <a href="index.html#usluge" class="nav-link">Usluge <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px; color: var(--ljubicasta);"></i></a>
+                        <div class="dropdown-menu">
+                             <a href="/izrada-wordpress-stranice/" class="dropdown-link">Izrada WordPress stranice</a>
+                            <a href="/izrada-web-shopa/" class="dropdown-link">Izrada online prodavnice</a>
+                            <a href="/seo-optimizacija/" class="dropdown-link">SEO Optimizacija & Pozicioniranje</a>
+                            <a href="/redizajn/" class="dropdown-link">Redizajn web stranice</a>
+                            <a href="/odrzavanje/" class="dropdown-link">Održavanje & Sigurnost</a>
+                            <a href="/izrada-aplikacije/" class="dropdown-link">Mobilne aplikacije</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#portfolio" class="nav-link">Radovi</a></li>
+                    <li><a href="index.html#proces" class="nav-link">Proces</a></li>
+                    <li><a href="index.html#faq" class="nav-link">Blog</a></li>
+                    <li><a href="/kontakt/" class="nav-link">Kontakt</a></li>
+                    <li><a href="/kontakt/" class="cta-button">Cijena Izrade</a></li>
+                </ul>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <div id="global-boxes-bg"><div class="boxes-core-wrapper" id="boxes-grid"></div></div>
+
+    <section class="service-hero-section">
+        <div class="container service-hero-grid">
+            <div class="hero-text">
+                <div class="floating-badge"><i class="fas fa-shield-alt" style="color:var(--bordo-main); margin-right:6px; font-size:1.1rem;"></i> Update, Backup & Sigurnost</div>
+                <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">Kompletno <span class="gradient-text">Održavanje i Sigurnost</span> Web Stranica</h1>
+                <p style="font-size: 1.15rem; color: #666; margin-bottom: 2.5rem; max-width: 95%;">
+                    Spavajte mirno znajući da je vaš sajt pod zaštitom 24/7. Web stranica zahtijeva redovno ažuriranje pluginova, PHP verzije i sigurnosne zakrpe kako bi ostala brza i otporna na hakerske napade. Mi brinemo o tehnologiji dok vi vodite biznis.
+                </p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#paketi" class="cta-button">Pogledajte Pakete</a>
+                    <a href="#rizici" class="cta-button" style="background: white; color: var(--text-dark); border: 2px solid var(--bordo-main); box-shadow: none;">Zašto Održavati?</a>
+                </div>
+            </div>
+            <div class="hero-img-container">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Cyber sigurnost i održavanje web stranica" />
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding transparent-section" id="rizici">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2>Šta se Dešava Ako se Stranica <span class="gradient-text">Ne Održava?</span></h2>
+                <p>Statistika kaže da se svakodnevno hakuje preko 30,000 web stranica. Najčešći uzrok? Zastarjeli softver.</p>
+            </div>
+            
+            <div class="grid-cards">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-user-secret"></i></div>
+                    <h3>Sigurnosni Rizici</h3>
+                    <p>Zastarjeli <strong>WordPress pluginovi</strong> su "otvorena vrata" za hakere. <strong>Malware</strong> može zaraziti vaš sajt, krasti podatke kupaca ili slati spam emailove u vaše ime.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3>Pad Performansi</h3>
+                    <p>Baza podataka (MySQL) se vremenom puni "smećem" (spam komentari, revizije). To drastično usporava učitavanje, što loše utiče na <strong>Core Web Vitals</strong> i Google poziciju.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-bug"></i></div>
+                    <h3>Kompatibilnost (Bugovi)</h3>
+                    <p>Kada se server ažurira na novu <strong>PHP verziju</strong> (npr. PHP 8.2), stari kod na vašoj stranici može "puknuti", čineći sajt nedostupnim (White Screen of Death).</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-database"></i></div>
+                    <h3>Gubitak Podataka</h3>
+                    <p>Bez redovnog <strong>Off-site Backupa</strong> (kopije na drugoj lokaciji), u slučaju kvara servera ili napada, možete zauvijek izgubiti sav sadržaj, narudžbe i bazu kupaca.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding transparent-section" id="paketi">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2>Šta Naš Paket <span class="gradient-text">Uključuje?</span></h2>
+                <p>Transparentan pregled šta dobijate angažovanjem profesionalne podrške.</p>
+            </div>
+
+            <div class="maintenance-table-wrapper">
+                <div class="m-row m-head">
+                    <div>Usluga / Aktivnost</div>
+                    <div style="text-align: center;">Samostalno (Rizik)</div>
+                    <div style="text-align: center; color: var(--bordo-main);">Naše Održavanje</div>
+                </div>
+
+                <div class="m-row">
+                    <div class="m-feature"><i class="fas fa-sync"></i> Ažuriranje Plugina i Tema</div>
+                    <div style="text-align: center;"><i class="fas fa-times m-cross"></i></div>
+                    <div style="text-align: center;"><i class="fas fa-check m-check"></i></div>
+                </div>
+
+                <div class="m-row">
+                    <div class="m-feature"><i class="fas fa-shield-alt"></i> WAF (Web App Firewall)</div>
+                    <div style="text-align: center;"><i class="fas fa-times m-cross"></i></div>
+                    <div style="text-align: center;"><i class="fas fa-check m-check"></i></div>
+                </div>
+
+                <div class="m-row">
+                    <div class="m-feature"><i class="fas fa-cloud-upload-alt"></i> Dnevni Cloud Backup</div>
+                    <div style="text-align: center;"><i class="fas fa-times m-cross"></i></div>
+                    <div style="text-align: center;"><i class="fas fa-check m-check"></i></div>
+                </div>
+
+                <div class="m-row">
+                    <div class="m-feature"><i class="fas fa-heartbeat"></i> Uptime Monitor (24/7)</div>
+                    <div style="text-align: center;"><i class="fas fa-times m-cross"></i></div>
+                    <div style="text-align: center;"><i class="fas fa-check m-check"></i></div>
+                </div>
+
+                <div class="m-row">
+                    <div class="m-feature"><i class="fas fa-broom"></i> Čišćenje Malware-a</div>
+                    <div style="text-align: center;">Skupo (300KM+)</div>
+                    <div style="text-align: center; font-weight:bold; color:#27ae60;">BESPLATNO</div>
+                </div>
+
+                <div class="m-row">
+                    <div class="m-feature"><i class="fas fa-file-pdf"></i> Mjesečni Izvještaj</div>
+                    <div style="text-align: center;"><i class="fas fa-times m-cross"></i></div>
+                    <div style="text-align: center;"><i class="fas fa-check m-check"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding transparent-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2>Kako Funkcioniše <span class="gradient-text">Zaštita?</span></h2>
+                <p>Naš "Proactive" pristup sprečava probleme prije nego što se dogode.</p>
+            </div>
+            <div class="process-container">
+                <div class="process-line"></div>
+                <div class="process-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>Sigurnosni Audit</h3>
+                        <p>Prvo skeniramo vašu stranicu. Instaliramo <strong>Wordfence</strong> ili sličan sigurnosni alat i konfigurišemo zaštitu od "Brute Force" napada.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>Optimizacija i Update</h3>
+                        <p>Ručno ažuriramo sve komponente. Prije svakog ažuriranja radimo testni backup. Optimizujemo bazu podataka za brže upite.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>Monitoring 24/7</h3>
+                        <p>Povezujemo sajt na naš <strong>Uptime Monitor</strong>. Ako stranica padne makar na 1 minutu, naš tim dobija alarm i odmah reaguje.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h3>Izvještavanje</h3>
+                        <p>Na kraju mjeseca dobijate PDF izvještaj: šta je ažurirano, koliko je napada blokirano i kakvo je zdravlje (Health Score) vaše stranice.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding transparent-section" id="faq">
+        <div class="container" style="max-width: 800px;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2>Pitanja o <span class="gradient-text">Održavanju</span></h2>
+                <p>Tehnički detalji i troškovi.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Zašto moram plaćati mjesečno održavanje?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p style="padding-bottom:1.5rem;">Web stranica nije jednokratan proizvod, već živi softver. Bez održavanja, ona postaje ranjiva, spora i nekompatibilna sa novim tehnologijama. Održavanje je vaša "polica osiguranja" protiv katastrofalnih gubitaka podataka.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Šta ako mi neko hakira stranicu?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p style="padding-bottom:1.5rem;">Ako ste naš klijent na održavanju, mi preuzimamo odgovornost. <strong>Besplatno</strong> čistimo stranicu od virusa i vraćamo je u funkcionalno stanje iz naših sigurnih backup arhiva.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Koliko često radite Backup?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p style="padding-bottom:1.5rem;">Ovisno o paketu, radimo <strong>dnevne ili sedmične</strong> sigurnosne kopije. Ključno je što te kopije čuvamo na "Cloud" serveru odvojenom od vašeg hostinga, radi maksimalne sigurnosti.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Mogu li otkazati uslugu?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p style="padding-bottom:1.5rem;">Da, usluga je bez ugovorne obaveze na duge staze. Možete otkazati bilo kada, ali imajte na umu da tada preuzimate punu odgovornost za sigurnost i ažuriranje sajta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="prefooter-section">
+        <div class="container prefooter-content">
+            <div class="pf-text">
+                <h2>Zaštitite<span class="gradient-text-light"> Svoju Investiciju</span></h2>
+                <p>Ne čekajte da se problem desi. Prepustite brigu o tehničkim detaljima stručnjacima, a vi se fokusirajte na rast svog poslovanja.
+.</p>
+            </div>
+            <div class="pf-cta">
+                <a href="/kontakt/" class="pf-button">Zatražite Ponudu <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="f-col-brand">
+                    <a href="index.html" class="footer-logo">
+                        <div class="f-logo-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="f-logo-text">
+                            <span class="f-main">Izrada <span style="color:#9B59B6;">Web</span></span>
+                            <span class="f-sub">stranice</span>
+                        </div>
+                    </a>
+                    <p class="footer-desc">Profesionalna agencija za web dizajn i digitalni marketing. Vaš partner za online uspjeh u BiH.</p>
+<div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        
+                        <a href="https://wa.me/38762196206" target="_blank" class="chat-icon whatsapp" title="Pišite na WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        
+                        <a href="viber://chat?number=%2B38762196206" target="_blank" class="chat-icon viber" title="Pišite na Viber">
+                            <i class="fab fa-viber"></i>
+                        </a>
+                        
+                        <a href="https://t.me/ibrakaa" target="_blank" class="chat-icon telegram" title="Pišite na Telegram">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="f-col-links">
+                    <h4>Naše Usluge</h4>
+                    <ul>
+                        <li><a href="#">Izrada WordPress Stranica</a></li>
+                        <li><a href="#">Izrada Web Shopa</a></li>
+                        <li><a href="#">SEO Optimizacija</a></li>
+                        <li><a href="#">Redizajn Web Stranica</a></li>
+                        <li><a href="#">Mobilne Aplikacije</a></li>
+                        <li><a href="#">Održavanje Sajtova</a></li>
+                    </ul>
+                </div>
+
+                <div class="f-col-links">
+                    <h4>Kompanija</h4>
+                    <ul>
+                        <li><a href="index.html#portfolio">Naši Radovi</a></li>
+                        <li><a href="index.html#proces">Proces Izrade</a></li>
+                        <li><a href="index.html#faq">Česta Pitanja</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                        <li><a href="#">Politika Privatnosti</a></li>
+                    </ul>
+                </div>
+
+                <div class="f-col-contact">
+                    <h4>Kontaktirajte Nas</h4>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sarajevo 71000, BiH</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+38762196206">+387 62 196 206</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@izradawebstranice.ba">info@izradawebstranice.ba</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Izrada Web Stranica BiH. Sva prava zadržana.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        /* --- PREFOOTER STYLES --- */
+        .prefooter-section {
+            background: #1a1a1a; /* Tamna podloga */
+            background-image: radial-gradient(circle at 100% 0%, #2c1e30 0%, #1a1a1a 50%);
+            padding: 5rem 1rem;
+            margin-top: 6rem;
+            position: relative;
+            border-bottom: 1px solid #333;
+        }
+        .prefooter-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .pf-text h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .gradient-text-light {
+            background: linear-gradient(90deg, #9B59B6, #D2B4DE); /* Ljubičasti gradient */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .pf-text p {
+            color: #aaa;
+            font-size: 1.1rem;
+            max-width: 600px;
+        }
+        .pf-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #8B0A1A, #9B59B6); /* Bordo-Ljubičasto */
+            color: white;
+            font-weight: 700;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(155, 89, 182, 0.3);
+            transition: 0.3s;
+        }
+        .pf-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(155, 89, 182, 0.5);
+        }
+
+/* --- FOOTER STYLES --- */
+        footer {
+            background: #111;
+            color: #bbb;
+            padding: 5rem 1rem 1rem;
+            font-size: 0.95rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        /* Brand Column */
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+        }
+        .f-logo-icon {
+            width: 40px; height: 40px;
+            background: linear-gradient(135deg, #8B0A1A, #9B59B6);
+            color: white;
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+        }
+        .f-logo-text { display: flex; flex-direction: column; line-height: 1; }
+        .f-main { font-size: 1.1rem; font-weight: 800; color: white; text-transform: uppercase; }
+        .f-sub { font-family: 'Dancing Script', cursive; font-size: 1rem; color: #9B59B6; }
+        
+        .footer-desc { margin-bottom: 1.5rem; line-height: 1.6; }
+        
+        /* SOCIAL & CHAT ICONS */
+        .social-links { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+        .social-links a {
+            width: 38px; height: 38px;
+            background: #222;
+            color: white;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+            transition: 0.3s;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+        /* Hover efekti za standardne social icons */
+        .social-links a:not(.chat-icon):hover { background: #9B59B6; transform: translateY(-3px); }
+
+        /* Specifične boje za chat aplikacije na hover */
+        .chat-icon.whatsapp:hover { background: #25D366; transform: translateY(-3px); }
+        .chat-icon.viber:hover { background: #7360f2; transform: translateY(-3px); }
+        .chat-icon.telegram:hover { background: #0088cc; transform: translateY(-3px); }
+
+        /* Links Columns */
+        footer h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        footer h4::after {
+            content: ''; position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: #9B59B6;
+        }
+        
+        footer ul li { margin-bottom: 0.8rem; }
+        footer ul a { color: #bbb; transition: 0.3s; text-decoration: none; }
+        footer ul a:hover { color: #9B59B6; padding-left: 5px; }
+
+        /* Contact Column */
+        .contact-list li {
+            display: flex; align-items: flex-start; gap: 12px; margin-bottom: 1rem;
+        }
+        .contact-list i { color: #9B59B6; margin-top: 4px; }
+        .contact-list a:hover { color: white; padding-left: 0; }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            border-top: 1px solid #222;
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.6;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+        }
+    </style>
+
+    <script>
+        function toggleMobileMenu() { document.getElementById('mainNav').classList.toggle('mobile-active'); }
+
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            item.classList.toggle('active-item');
+            answer.classList.toggle('active');
+            if(answer.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+                if(icon) icon.style.transform = "rotate(180deg)";
+            } else {
+                answer.style.maxHeight = 0;
+                if(icon) icon.style.transform = "rotate(0deg)";
+            }
+        }
+
+        // BACKGROUND BOXES
+        function initBoxes(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            const colors = ["rgba(139, 10, 26, 0.5)", "rgba(155, 89, 182, 0.5)", "rgba(255, 105, 180, 0.5)", "rgba(255, 160, 122, 0.5)"];
+            const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
+            const boxSize = 40; 
+            const cols = Math.ceil(container.offsetWidth / boxSize);
+            const rows = Math.ceil(container.offsetHeight / boxSize);
+            container.style.display = 'grid';
+            container.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+            container.innerHTML = '';
+            for (let i = 0; i < rows * cols; i++) {
+                const cell = document.createElement('div');
+                cell.classList.add('box-row-cell');
+                if (Math.random() > 0.6) cell.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" /></svg>`;
+                cell.addEventListener('mouseenter', () => { cell.style.backgroundColor = getRandomColor(); cell.style.transition = '0s'; });
+                cell.addEventListener('mouseleave', () => { cell.style.backgroundColor = 'transparent'; cell.style.transition = 'background-color 1s ease'; });
+                container.appendChild(cell);
+            }
+        }
+        window.addEventListener('load', () => { initBoxes('boxes-grid'); });
+        window.addEventListener('resize', () => { setTimeout(() => { initBoxes('boxes-grid'); }, 250); });
+    </script>
+</body>
+</html>
