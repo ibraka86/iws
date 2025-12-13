@@ -7,11 +7,9 @@
     <meta name="description" content="Zatražite besplatnu ponudu za izradu web stranice, SEO optimizaciju ili mobilnu aplikaciju. Kontaktirajte nas danas.">
     
     <link rel="canonical" href="https://izradawebstranice.ba/kontakt/" />
-  <link rel="icon" type="image/png" href="/icon.png">
+    <link rel="icon" type="image/png" href="/icon.png">
+    <link rel="apple-touch-icon" href="/icon.png">
 
-
-
-<link rel="apple-touch-icon" href="/icon.png">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kontakt | Započnimo Vaš Projekat">
     <meta property="og:description" content="Spremni za rast? Pošaljite nam upit i odgovaramo u roku od 24 sata.">
@@ -19,15 +17,14 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-         <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B364LKSGSK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-B364LKSGSK');
-</script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B364LKSGSK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-B364LKSGSK');
+    </script>
     
     <script type="application/ld+json">
     {
@@ -214,272 +211,6 @@
         .f-col a:hover { color: var(--bordo-main); }
         .mobile-menu-btn { display: none; border: none; background: none; font-size: 1.5rem; cursor: pointer; color: var(--text-dark); }
 
-        /* --- MOBILE --- */
-        @media (max-width: 991px) {
-            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-            /* Na mobilnom, ako zelis da je forma PRVA, ostavi kako je u HTML-u. 
-               Ako zelis da su info kartice prve na mobitelu, dodaj order: 2 za formu */
-            .hero-section { padding: 4rem 1rem 2rem; }
-            .hero-content h1 { font-size: 2.2rem; }
-            .contact-form-wrapper { padding: 1.5rem; }
-            
-            nav ul.desktop-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 0 0 16px 16px; flex-direction: column; align-items: flex-start; z-index: 2000; }
-            nav ul.desktop-menu.mobile-active { display: flex; }
-            .mobile-menu-btn { display: block; }
-            .mega-dropdown-parent:hover .dropdown-menu { display: none; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon"><i class="fas fa-laptop-code"></i></div>
-                <div class="logo-text-col">
-                    <span class="logo-main">Izrada <span class="red-text">Web</span></span>
-                    <span class="logo-sub">stranice</span>
-                </div>
-            </a>
-            
-            <nav>
-                <ul class="desktop-menu" id="mainNav">
-                    <li><a href="index.html" class="nav-link">Početna</a></li>
-                    <li class="mega-dropdown-parent">
-                        <a href="index.html#usluge" class="nav-link">Usluge <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px; color: var(--ljubicasta);"></i></a>
-                        <div class="dropdown-menu">
-                                <a href="/izrada-wordpress-stranice/" class="dropdown-link">Izrada WordPress stranice</a>
-                            <a href="/izrada-web-shopa/" class="dropdown-link">Izrada online prodavnice</a>
-                            <a href="/seo-optimizacija/" class="dropdown-link">SEO Optimizacija & Pozicioniranje</a>
-                            <a href="/redizajn/" class="dropdown-link">Redizajn web stranice</a>
-                            <a href="/odrzavanje/" class="dropdown-link">Održavanje & Sigurnost</a>
-                            <a href="/izrada-aplikacije/" class="dropdown-link">Mobilne aplikacije</a>
-                        </div>
-                    </li>
-                    <li><a href="index.html#portfolio" class="nav-link">Radovi</a></li>
-                    <li><a href="index.html#proces" class="nav-link">Proces</a></li>
-                    <li><a href="index.html#faq" class="nav-link">Blog</a></li>
-                    <li><a href="/kontakt/" class="nav-link">Kontakt</a></li>
-                    <li><a href="/kontakt/" class="cta-button">Cijena Izrade</a></li>
-                </ul>
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
-            </nav>
-        </div>
-    </header>
-
-    <div id="global-boxes-bg"><div class="boxes-core-wrapper" id="boxes-grid"></div></div>
-
-    <section class="hero-section">
-        <div class="container hero-content">
-            <h1>Započnimo Vaš <span class="gradient-text">Projekat</span></h1>
-            <p>Imate ideju ili vam treba savjet? Popunite formu ispod ili nas nazovite. Odgovaramo na sve upite u roku od 24 sata.</p>
-        </div>
-    </section>
-
-    <section class="section-padding transparent-section" style="padding-top: 0;">
-        <div class="container">
-            <div class="contact-grid" id="kontakt-forma">
-                
-                <div class="contact-form-wrapper">
-                    <h3 style="margin-bottom: 1.5rem;">Pošaljite Upit</h3>
-                    
-                    <form action="https://api.web3forms.com/submit" method="POST">
-                        
-                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                        
-                        <input type="hidden" name="subject" value="Novi upit sa sajta (Kontakt Forma)">
-                        <input type="hidden" name="from_name" value="Izrada Web Sajta">
-                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                        <div class="form-group">
-                            <label class="form-label">Ime i Prezime</label>
-                            <input type="text" name="name" class="form-control" placeholder="Vaše ime" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Email Adresa</label>
-                            <input type="email" name="email" class="form-control" placeholder="vas@email.com" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Broj Telefona (Opcionalno)</label>
-                            <input type="tel" name="phone" class="form-control" placeholder="+387...">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Za koju uslugu ste zainteresovani?</label>
-                            <select name="service" class="form-control" required>
-                                <option value="" disabled selected>Odaberite uslugu...</option>
-                                <option value="Izrada WordPress Stranice">Izrada WordPress Stranice</option>
-                                <option value="Izrada Web Shopa">Izrada Web Shopa (E-commerce)</option>
-                                <option value="SEO Optimizacija">SEO Optimizacija</option>
-                                <option value="Redizajn Sajta">Redizajn Postojećeg Sajta</option>
-                                <option value="Održavanje">Održavanje i Sigurnost</option>
-                                <option value="Mobilna Aplikacija">Mobilna Aplikacija</option>
-                                <option value="Drugo">Drugo / Konsultacije</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Vaša Poruka</label>
-                            <textarea name="message" class="form-control" placeholder="Opišite ukratko vaš projekat..." required></textarea>
-                        </div>
-
-                        <button type="submit" class="cta-button" style="width: 100%; border:none;">Pošalji Poruku <i class="fas fa-paper-plane" style="margin-left:8px;"></i></button>
-                    </form>
-                </div>
-
-<div class="contact-info">
-    <h3 style="margin-bottom: 2rem;">Kontakt Podaci</h3>
-    
-    <div class="info-card">
-        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
-        <div>
-            <h4>Pozovite Nas</h4>
-            <p style="color:#666; font-weight: 600; font-size: 1.1rem; margin-bottom: 5px;">+387 62 196 206</p>
-            
-            <div style="display:flex; gap:0.8rem; margin-top:0.5rem;">
-                <a href="https://wa.me/38762196206" target="_blank" title="WhatsApp" 
-                   style="color: #25D366; font-size: 1.4rem; transition: 0.3s;"><i class="fab fa-whatsapp"></i></a>
-                
-                <a href="viber://chat?number=%2B38762196206" target="_blank" title="Viber" 
-                   style="color: #7360f2; font-size: 1.4rem; transition: 0.3s;"><i class="fab fa-viber"></i></a>
-                
-                <a href="https://t.me/ibrakaa" target="_blank" title="Telegram" 
-                   style="color: #0088cc; font-size: 1.4rem; transition: 0.3s;"><i class="fab fa-telegram-plane"></i></a>
-            </div>
-            
-            <p style="font-size:0.85rem; color:#999; margin-top: 8px;">Pon-Pet: 09:00 - 17:00</p>
-        </div>
-    </div>
-
-    <div class="info-card">
-        <div class="info-icon"><i class="fas fa-envelope"></i></div>
-        <div>
-            <h4>Email Adresa</h4>
-            <p style="color:#666;">info@izradawebstranice.ba</p>
-            <p style="font-size:0.85rem; color:#999;">Podrška 24/7 za hitne slučajeve</p>
-        </div>
-    </div>
-
-    <div class="info-card">
-        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-        <div>
-            <h4>Lokacija</h4>
-            <p style="color:#666;">Sarajevo</p>
-            <p style="font-size:0.85rem; color:#999;">Bosna i Hercegovina</p>
-        </div>
-    </div>
-
-    <div style="margin-top: 2rem; padding-left: 10px;">
-        <h4>Pratite nas:</h4>
-        <div style="display:flex; gap:1rem; margin-top:1rem;">
-            <a href="#" class="info-icon" style="width:40px; height:40px;"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="info-icon" style="width:40px; height:40px;"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="info-icon" style="width:40px; height:40px;"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-    </div>
-</div>
-
-            </div>
-
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2876.543210987654!2d18.41307631550956!3d43.85625897911486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758c8cfc71f4355%3A0x6b4737758362615!2sSarajevo!5e0!3m2!1sen!2sba!4v1620000000000!5m2!1sen!2sba" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-    </section>
-
-       <section class="prefooter-section">
-        <div class="container prefooter-content">
-            <div class="pf-text">
-                <h2>Spremni za <span class="gradient-text-light">Digitalni Iskorak?</span></h2>
-                <p>Ne dozvolite da vas konkurencija prestigne. Zakažite besplatne konsultacije i saznajte kako možemo unaprijediti vaše poslovanje.</p>
-            </div>
-            <div class="pf-cta">
-                <a href="/kontakt/" class="pf-button">Zatražite Ponudu <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="f-col-brand">
-                    <a href="index.html" class="footer-logo">
-                        <div class="f-logo-icon"><i class="fas fa-laptop-code"></i></div>
-                        <div class="f-logo-text">
-                            <span class="f-main">Izrada <span style="color:#9B59B6;">Web</span></span>
-                            <span class="f-sub">stranice</span>
-                        </div>
-                    </a>
-                    <p class="footer-desc">Profesionalna agencija za web dizajn i digitalni marketing. Vaš partner za online uspjeh u BiH.</p>
-<div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        
-                        <a href="https://wa.me/38762196206" target="_blank" class="chat-icon whatsapp" title="Pišite na WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        
-                        <a href="viber://chat?number=%2B38762196206" target="_blank" class="chat-icon viber" title="Pišite na Viber">
-                            <i class="fab fa-viber"></i>
-                        </a>
-                        
-                        <a href="https://t.me/ibrakaa" target="_blank" class="chat-icon telegram" title="Pišite na Telegram">
-                            <i class="fab fa-telegram-plane"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="f-col-links">
-                    <h4>Naše Usluge</h4>
-                    <ul>
-                        <li><a href="#">Izrada WordPress Stranica</a></li>
-                        <li><a href="#">Izrada Web Shopa</a></li>
-                        <li><a href="#">SEO Optimizacija</a></li>
-                        <li><a href="#">Redizajn Web Stranica</a></li>
-                        <li><a href="#">Mobilne Aplikacije</a></li>
-                        <li><a href="#">Održavanje Sajtova</a></li>
-                    </ul>
-                </div>
-
-                <div class="f-col-links">
-                    <h4>Kompanija</h4>
-                    <ul>
-                        <li><a href="index.html#portfolio">Naši Radovi</a></li>
-                        <li><a href="index.html#proces">Proces Izrade</a></li>
-                        <li><a href="index.html#faq">Česta Pitanja</a></li>
-                        <li><a href="kontakt.html">Kontakt</a></li>
-                        <li><a href="#">Politika Privatnosti</a></li>
-                    </ul>
-                </div>
-
-                <div class="f-col-contact">
-                    <h4>Kontaktirajte Nas</h4>
-                    <ul class="contact-list">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Sarajevo 71000, BiH</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone-alt"></i>
-                            <a href="tel:+38762196206">+387 62 196 206</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@izradawebstranice.ba">info@izradawebstranice.ba</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 Izrada Web Stranica BiH. Sva prava zadržana.</p>
-            </div>
-        </div>
-    </footer>
-
-    <style>
         /* --- PREFOOTER STYLES --- */
         .prefooter-section {
             background: #1a1a1a; /* Tamna podloga */
@@ -530,7 +261,7 @@
             box-shadow: 0 15px 40px rgba(155, 89, 182, 0.5);
         }
 
-/* --- FOOTER STYLES --- */
+        /* --- FOOTER STYLES --- */
         footer {
             background: #111;
             color: #bbb;
@@ -618,13 +349,313 @@
             font-size: 0.85rem;
         }
 
-        /* Responsive */
+        /* --- MOBILE --- */
         @media (max-width: 991px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+            /* Na mobilnom, ako zelis da je forma PRVA, ostavi kako je u HTML-u. 
+               Ako zelis da su info kartice prve na mobitelu, dodaj order: 2 za formu */
+            .hero-section { padding: 4rem 1rem 2rem; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .contact-form-wrapper { padding: 1.5rem; }
+            
+            nav ul.desktop-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 0 0 16px 16px; flex-direction: column; align-items: flex-start; z-index: 2000; }
+            nav ul.desktop-menu.mobile-active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            
+            /* --- DROPDOWN FIX FOR MOBILE --- */
+            .mega-dropdown-parent:hover .dropdown-menu { display: none; } /* Disable hover on mobile */
+            .dropdown-menu {
+                position: static !important;
+                width: 100% !important;
+                display: none;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+                box-shadow: none !important;
+                background: #f9f9f9 !important;
+                padding-left: 20px !important;
+            }
+            .dropdown-menu.active {
+                display: block !important;
+            }
+
+            /* Prefooter Fix for Mobile */
+            .prefooter-content { flex-direction: column; text-align: center; }
+            .pf-text { margin-bottom: 1.5rem; }
+            .pf-text h2 { font-size: 2rem; }
+
+            /* Footer Fix for Mobile */
             .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
         }
     </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="logo-text-col">
+                    <span class="logo-main">Izrada <span class="red-text">Web</span></span>
+                    <span class="logo-sub">stranice</span>
+                </div>
+            </a>
+            
+            <nav>
+                <ul class="desktop-menu" id="mainNav">
+                    <li><a href="index.html" class="nav-link">Početna</a></li>
+                    <li class="mega-dropdown-parent">
+                        <a href="index.html#usluge" class="nav-link">Usluge <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px; color: var(--ljubicasta);"></i></a>
+                        <div class="dropdown-menu">
+                                <a href="/izrada-wordpress-stranice-" class="dropdown-link">Izrada WordPress stranice</a>
+                            <a href="/izrada-web-shopa/" class="dropdown-link">Izrada online prodavnice</a>
+                            <a href="/seo-optimizacija/" class="dropdown-link">SEO Optimizacija & Pozicioniranje</a>
+                            <a href="/redizajn/" class="dropdown-link">Redizajn web stranice</a>
+                            <a href="/odrzavanje/" class="dropdown-link">Održavanje & Sigurnost</a>
+                            <a href="/izrada-aplikacije/" class="dropdown-link">Mobilne aplikacije</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#portfolio" class="nav-link">Radovi</a></li>
+                    <li><a href="index.html#proces" class="nav-link">Proces</a></li>
+                    <li><a href="index.html#faq" class="nav-link">Blog</a></li>
+                    <li><a href="/kontakt/" class="nav-link">Kontakt</a></li>
+                    <li><a href="/kontakt/" class="cta-button">Cijena Izrade</a></li>
+                </ul>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <div id="global-boxes-bg"><div class="boxes-core-wrapper" id="boxes-grid"></div></div>
+
+    <section class="hero-section">
+        <div class="container hero-content">
+            <h1>Započnimo Vaš <span class="gradient-text">Projekat</span></h1>
+            <p>Imate ideju ili vam treba savjet? Popunite formu ispod ili nas nazovite. Odgovaramo na sve upite u roku od 24 sata.</p>
+        </div>
+    </section>
+
+    <section class="section-padding transparent-section" style="padding-top: 0;">
+        <div class="container">
+            <div class="contact-grid" id="kontakt-forma">
+                
+                <div class="contact-form-wrapper">
+                    <h3 style="margin-bottom: 1.5rem;">Pošaljite Upit</h3>
+                    
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        
+                        <input type="hidden" name="subject" value="Novi upit sa sajta (Kontakt Forma)">
+                        <input type="hidden" name="from_name" value="Izrada Web Sajta">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                        <div class="form-group">
+                            <label class="form-label">Ime i Prezime</label>
+                            <input type="text" name="name" class="form-control" placeholder="Vaše ime" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Email Adresa</label>
+                            <input type="email" name="email" class="form-control" placeholder="vas@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Broj Telefona (Opcionalno)</label>
+                            <input type="tel" name="phone" class="form-control" placeholder="+387...">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Za koju uslugu ste zainteresovani?</label>
+                            <select name="service" class="form-control" required>
+                                <option value="" disabled selected>Odaberite uslugu...</option>
+                                <option value="Izrada WordPress Stranice">Izrada WordPress Stranice</option>
+                                <option value="Izrada Web Shopa">Izrada Web Shopa (E-commerce)</option>
+                                <option value="SEO Optimizacija">SEO Optimizacija</option>
+                                <option value="Redizajn Sajta">Redizajn Postojećeg Sajta</option>
+                                <option value="Održavanje">Održavanje i Sigurnost</option>
+                                <option value="Mobilna Aplikacija">Mobilna Aplikacija</option>
+                                <option value="Drugo">Drugo / Konsultacije</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Vaša Poruka</label>
+                            <textarea name="message" class="form-control" placeholder="Opišite ukratko vaš projekat..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="cta-button" style="width: 100%; border:none;">Pošalji Poruku <i class="fas fa-paper-plane" style="margin-left:8px;"></i></button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 2rem;">Kontakt Podaci</h3>
+                    
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <h4>Pozovite Nas / Chat</h4>
+                            <p style="color:#666; margin-bottom: 0.5rem;"><a href="tel:+38762196206" style="color:#666; text-decoration: none;">+387 62 196 206</a></p>
+                            <p style="font-size:0.85rem; color:#999; margin-bottom: 1rem;">Pon-Pet: 09:00 - 17:00</p>
+                            
+                            <div style="display:flex; gap:10px;">
+                                <a href="https://wa.me/38762196206" target="_blank" class="info-icon" style="width: 38px; height: 38px; font-size: 1rem; color: #25D366; background: #f0fff0;" title="WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="viber://chat?number=%2B38762196206" target="_blank" class="info-icon" style="width: 38px; height: 38px; font-size: 1rem; color: #7360f2; background: #f8f8ff;" title="Viber">
+                                    <i class="fab fa-viber"></i>
+                                </a>
+                                <a href="https://t.me/ibrakaa" target="_blank" class="info-icon" style="width: 38px; height: 38px; font-size: 1rem; color: #0088cc; background: #f0f8ff;" title="Telegram">
+                                    <i class="fab fa-telegram-plane"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email Adresa</h4>
+                            <p style="color:#666;">info@izradaweb.ba</p>
+                            <p style="font-size:0.85rem; color:#999;">Podrška 24/7 za hitne slučajeve</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Lokacija</h4>
+                            <p style="color:#666;">Titova bb, Sarajevo</p>
+                            <p style="font-size:0.85rem; color:#999;">Bosna i Hercegovina</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding-left: 10px;">
+                        <h4>Pratite nas:</h4>
+                        <div style="display:flex; gap:1rem; margin-top:1rem;">
+                            <a href="#" class="info-icon" style="width:40px; height:40px;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="info-icon" style="width:40px; height:40px;"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="info-icon" style="width:40px; height:40px;"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2876.543210987654!2d18.41307631550956!3d43.85625897911486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758c8cfc71f4355%3A0x6b4737758362615!2sSarajevo!5e0!3m2!1sen!2sba!4v1620000000000!5m2!1sen!2sba" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+       <section class="prefooter-section">
+        <div class="container prefooter-content">
+            <div class="pf-text">
+                <h2>Spremni za <span class="gradient-text-light">Digitalni Iskorak?</span></h2>
+                <p>Ne dozvolite da vas konkurencija prestigne. Zakažite besplatne konsultacije i saznajte kako možemo unaprijediti vaše poslovanje.</p>
+            </div>
+            <div class="pf-cta">
+                <a href="kontakt.html" class="pf-button">Zatražite Ponudu <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="f-col-brand">
+                    <a href="index.html" class="footer-logo">
+                        <div class="f-logo-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="f-logo-text">
+                            <span class="f-main">Izrada <span style="color:#9B59B6;">Web</span></span>
+                            <span class="f-sub">stranice</span>
+                        </div>
+                    </a>
+                    <p class="footer-desc">Profesionalna agencija za web dizajn i digitalni marketing. Vaš partner za online uspjeh u BiH.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        
+                        <a href="https://wa.me/38762196206" target="_blank" class="chat-icon whatsapp" title="Pišite na WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        
+                        <a href="viber://chat?number=%2B38762196206" target="_blank" class="chat-icon viber" title="Pišite na Viber">
+                            <i class="fab fa-viber"></i>
+                        </a>
+                        
+                        <a href="https://t.me/ibrakaa" target="_blank" class="chat-icon telegram" title="Pišite na Telegram">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="f-col-links">
+                    <h4>Naše Usluge</h4>
+                    <ul>
+                        <li><a href="#">Izrada WordPress Stranica</a></li>
+                        <li><a href="#">Izrada Web Shopa</a></li>
+                        <li><a href="#">SEO Optimizacija</a></li>
+                        <li><a href="#">Redizajn Web Stranica</a></li>
+                        <li><a href="#">Mobilne Aplikacije</a></li>
+                        <li><a href="#">Održavanje Sajtova</a></li>
+                    </ul>
+                </div>
+
+                <div class="f-col-links">
+                    <h4>Kompanija</h4>
+                    <ul>
+                        <li><a href="index.html#portfolio">Naši Radovi</a></li>
+                        <li><a href="index.html#proces">Proces Izrade</a></li>
+                        <li><a href="index.html#faq">Česta Pitanja</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                        <li><a href="#">Politika Privatnosti</a></li>
+                    </ul>
+                </div>
+
+                <div class="f-col-contact">
+                    <h4>Kontaktirajte Nas</h4>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sarajevo 71000, BiH</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+38762196206">+387 62 196 206</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@izradawebstranice.ba">info@izradawebstranice.ba</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Izrada Web Stranica BiH. Sva prava zadržana.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
         function toggleMobileMenu() { document.getElementById('mainNav').classList.toggle('mobile-active'); }
+
+        // DROPDOWN NA MOBILNOM
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownToggle = document.querySelector('.mega-dropdown-parent > a');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+
+            if (dropdownToggle && dropdownMenu) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 991) {
+                        e.preventDefault(); 
+                        dropdownMenu.classList.toggle('active');
+                        this.classList.toggle('active-arrow');
+                    }
+                });
+            }
+        });
 
         // BACKGROUND BOXES
         function initBoxes(containerId) {
