@@ -28,41 +28,205 @@
       gtag('config', 'G-B364LKSGSK');
     </script>
 
-    <script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "WebSite",
+      "@id": "https://izradawebstranice.ba/#website",
+      "url": "https://izradawebstranice.ba/",
+      "name": "Izrada Web Stranica BiH",
+      "description": "Profesionalna izrada web stranica u BiH. Provjerite cijene izrade za Sarajevo, Tuzlu i Banja Luku.",
+      "inLanguage": "bs-BA",
+      "publisher": {
+        "@id": "https://izradawebstranice.ba/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://izradawebstranice.ba/#webpage",
+      "url": "https://izradawebstranice.ba/",
+      "name": "Profesionalna Izrada Web Stranice Koja Donosi Rezultate | IWS BiH",
+      "isPartOf": {
+        "@id": "https://izradawebstranice.ba/#website"
+      },
+      "about": {
+        "@id": "https://izradawebstranice.ba/#organization"
+      },
+      "description": "Profesionalna izrada web stranica u BiH. Specijalizirani za WordPress, turističke agencije i web shopove.",
+      "breadcrumb": {
+        "@id": "https://izradawebstranice.ba/#breadcrumb"
+      },
+      "mentions": [
         {
-          "@type": "ProfessionalService",
-          "@id": "https://izradawebstranice.ba/#organization",
-          "name": "Izrada Web Stranice",
-          "url": "https://izradawebstranice.ba/",
-          "description": "Profesionalna izrada web stranica, WordPress rješenja i SEO optimizacija za firme u BiH.",
-          "priceRange": "$$",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Sarajevo",
-            "addressCountry": "BA"
-          },
-          "areaServed": [
-            { "@type": "City", "name": "Sarajevo" },
-            { "@type": "City", "name": "Banja Luka" },
-            { "@type": "City", "name": "Tuzla" },
-            { "@type": "City", "name": "Mostar" },
-            { "@type": "City", "name": "Zenica" },
-            { "@type": "Country", "name": "Bosnia and Herzegovina" }
-          ],
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Usluge Web Dizajna",
-            "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Izrada WordPress Stranica" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Izrada Web Shopa (WooCommerce)" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Optimizacija" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Održavanje Web Stranica" } }
-            ]
-          }
+          "@type": "Thing",
+          "name": "Web design",
+          "sameAs": "https://en.wikipedia.org/wiki/Web_design"
         },
+        {
+          "@type": "Thing",
+          "name": "WordPress",
+          "sameAs": "https://www.wikidata.org/wiki/Q13166"
+        },
+        {
+          "@type": "Thing",
+          "name": "Search Engine Optimization",
+          "sameAs": "https://www.wikidata.org/wiki/Q180711"
+        },
+        {
+          "@type": "Thing",
+          "name": "E-commerce",
+          "sameAs": "https://www.wikidata.org/wiki/Q41228"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://izradawebstranice.ba/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Početna",
+          "item": "https://izradawebstranice.ba/"
+        }
+      ]
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "@id": "https://izradawebstranice.ba/#navigation",
+      "name": "Glavna Navigacija",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Izrada WordPress Stranice",
+          "url": "https://izradawebstranice.ba/izrada-wordpress-stranice/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Izrada Web Shopa",
+          "url": "https://izradawebstranice.ba/izrada-web-shopa/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "SEO Optimizacija",
+          "url": "https://izradawebstranice.ba/seo-optimizacija/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Redizajn Web Stranica",
+          "url": "https://izradawebstranice.ba/redizajn/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Održavanje",
+          "url": "https://izradawebstranice.ba/odrzavanje/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Izrada Aplikacije",
+          "url": "https://izradawebstranice.ba/izrada-aplikacije/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Kontakt",
+          "url": "https://izradawebstranice.ba/kontakt/"
+        }
+      ]
+    },
+    {
+      "@type": ["ProfessionalService", "LocalBusiness"],
+      "@id": "https://izradawebstranice.ba/#organization",
+      "name": "Izrada Web Stranice BiH",
+      "url": "https://izradawebstranice.ba/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://izradawebstranice.ba/icon.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://izradawebstranice.ba/social-share.png",
+      "description": "Profesionalna izrada web stranica, WordPress rješenja i SEO optimizacija za firme u BiH.",
+      "telephone": "+387-62-196-206",
+      "email": "info@izradawebstranice.ba",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sarajevo",
+        "postalCode": "71000",
+        "addressCountry": "BA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.8563,
+        "longitude": 18.4131
+      },
+      "sameAs": [
+        "https://www.facebook.com/tvojapage",
+        "https://www.instagram.com/tvojprofil",
+        "https://wa.me/38762196206"
+      ],
+      "areaServed": [
+        { "@type": "City", "name": "Sarajevo" },
+        { "@type": "City", "name": "Banja Luka" },
+        { "@type": "City", "name": "Tuzla" },
+        { "@type": "City", "name": "Mostar" },
+        { "@type": "City", "name": "Zenica" },
+        { "@type": "Country", "name": "Bosnia and Herzegovina" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Usluge Web Dizajna i Razvoja",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Izrada WordPress Stranice",
+              "url": "https://izradawebstranice.ba/izrada-wordpress-stranice/",
+              "description": "Profesionalna izrada sajtova u WordPress CMS-u."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Izrada Web Shopa",
+              "url": "https://izradawebstranice.ba/izrada-web-shopa/",
+              "description": "WooCommerce rješenja za online prodaju."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO Optimizacija",
+              "url": "https://izradawebstranice.ba/seo-optimizacija/",
+              "description": "Pozicioniranje na prvu stranicu Google-a."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Redizajn Web Stranice",
+              "url": "https://izradawebstranice.ba/redizajn/",
+              "description": "Modernizacija postojećih web stranica."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobilne Aplikacije",
+              "url": "https://izradawebstranice.ba/izrada-aplikacije/",
+              "description": "Razvoj iOS i Android aplikacija."
+            }
+          }
+        ]
+      }
+    },
         {
           "@type": "FAQPage",
           "@id": "https://izradawebstranice.ba/#faq",
@@ -1202,6 +1366,7 @@
     </script>
 </body>
 </html>
+
 
 
 
