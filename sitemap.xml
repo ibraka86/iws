@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+   <url>
+      <loc>https://izradawebstranice.ba/</loc>
+      <lastmod>2025-02-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1.00</priority>
+   </url>
+
+   <url>
+      <loc>https://izradawebstranice.ba/izrada-wordpress-stranice/</loc>
+      <lastmod>2025-02-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.80</priority>
+   </url>
+
+   <url>
+      <loc>https://izradawebstranice.ba/izrada-web-shopa/</loc>
+      <lastmod>2025-02-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.80</priority>
+   </url>
+
+   <url>
+      <loc>https://izradawebstranice.ba/seo-optimizacija/</loc>
+      <lastmod>2025-02-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.80</priority>
+   </url>
+
+   <url>
+      <loc>https://izradawebstranice.ba/redizajn/</loc>
+      <lastmod>2025-02-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.80</priority>
+   </url>
+
+   <url>
+      <loc>https://izradawebstranice.ba/odrzavanje/</loc>
+      <lastmod>2025-02-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.80</priority>
+   </url>
+
+   <url>
+      <loc>https://izradawebstranice.ba/izrada-aplikacije/</loc>
+      <lastmod>2025-02-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.80</priority>
+   </url>
+
+   <url>
+      <loc>https://izradawebstranice.ba/kontakt/</loc>
+      <lastmod>2025-02-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.80</priority>
+   </url>
+
+</urlset>
