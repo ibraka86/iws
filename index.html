@@ -1342,6 +1342,21 @@
             const container = document.getElementById('hero-canvas-container');
             if (!wrapper || !video || !canvas || !container) return;
 
+            // Na mobilnom — pusti video normalno, bez scroll animacije
+            if (window.innerWidth <= 991) {
+                canvas.style.display = 'none';
+                video.style.display = 'block';
+                video.style.width = '100%';
+                video.style.height = '100%';
+                video.style.objectFit = 'cover';
+                video.setAttribute('autoplay', '');
+                video.setAttribute('loop', '');
+                video.setAttribute('playsinline', '');
+                video.muted = true;
+                video.play();
+                return;
+            }
+
             const ctx = canvas.getContext('2d');
             const TOTAL_FRAMES = 100;
             let frames = [];
