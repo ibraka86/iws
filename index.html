@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profesionalna Izrada Web Stranice Koja Donosi Rezultate | IWS BiH </title>
     <meta name="description" content="Profesionalna izrada web stranica u BiH. Provjerite cijene izrade za Sarajevo, Tuzlu i Banja Luku. Specijalizirani za WordPress, turističke agencije i web shopove.">
-    <link rel="canonical" href="https://www.izradawebstranice.ba/" />
+    <link rel="canonical" href="https://izradawebstranice.ba/" />
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://izradawebstranice.ba/">
     <meta property="og:title" content="Izrada Web Stranica BiH | Profesionalno & Povoljno">
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B364LKSGSK"></script>
     <script>
@@ -454,23 +455,11 @@
 
         /* --- HERO SECTION --- */
         .hero-section {
-            padding: 10rem 1rem 4rem; position: sticky; top: 0; height: 100vh; overflow: hidden;
-            background:
-  radial-gradient(ellipse 30% 25% at 62% 0%, #FFFFFF 0%, transparent 100%),
-  radial-gradient(ellipse 70% 50% at 0% 0%, #EBEBEB 0%, transparent 100%),
-  radial-gradient(ellipse 70% 50% at 100% 0%, #EBEBEB 0%, transparent 100%),
-  radial-gradient(ellipse at 55% 55%, #FAFAFA 20%, #F4F4F4 100%); display: flex; align-items: center;
+            padding: 8rem 1rem 6rem; position: relative; overflow: hidden;
+            background: radial-gradient(circle at 70% 50%, #fff0f5 0%, #ffffff 70%); display: flex; align-items: center;
         }
-        .hero-content { display: grid; grid-template-columns: 1fr 1.3fr; align-items: center; gap: 2rem; position: relative; z-index: 10; }
-        #hero-canvas-container { width: 100%; height: calc(100vh - 18rem); position: relative; display: flex; align-items: center; justify-content: center; background: transparent;
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%), linear-gradient(to bottom, transparent 0%, black 8%), linear-gradient(to top, transparent 0%, black 8%);
-            -webkit-mask-composite: destination-in;
-            mask-image: linear-gradient(to right, transparent 0%, black 12%), linear-gradient(to bottom, transparent 0%, black 8%), linear-gradient(to top, transparent 0%, black 8%);
-            mask-composite: intersect;
-        }
-        #hero-scroll-wrapper { position: relative; height: 280vh; }
-        #hero-canvas { display: block; width: 100%; height: 100%; }
-        #hero-video-loading { display: none; }
+        .hero-content { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 2rem; position: relative; z-index: 10; }
+        #hero-canvas-container { width: 100%; height: 500px; position: relative; }
         .floating-badge {
             display: inline-flex; align-items: center; padding: 0.5rem 1rem;
             background: white; border: 1px solid var(--ljubicasta); border-radius: 50px;
@@ -706,11 +695,10 @@
 
         /* --- MOBILE OPTIMIZATION --- */
         @media (max-width: 991px) {
-            #hero-scroll-wrapper { height: 220vh; }
-            .hero-section { padding: 6rem 1rem 2rem; height: 100vh; align-items: flex-start; }
+            .hero-section { padding: 4rem 1rem; }
             .hero-content { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
             .hero-text { order: 1; padding: 0 10px; }
-            #hero-canvas-container { height: 260px; order: 2; width: 100%; }
+            #hero-canvas-container { height: 350px; order: 2; width: 100%; }
             .hero-text h1 { font-size: 2.2rem !important; line-height: 1.2; margin-bottom: 1rem; }
             .hero-text p { font-size: 1rem !important; margin-bottom: 1.5rem; }
             .hero-text div[style*="display: flex"] { justify-content: center; gap: 0.8rem; }
@@ -793,11 +781,11 @@
 
     <div id="global-boxes-bg"><div class="boxes-core-wrapper" id="boxes-grid"></div></div>
 
-    <div id="hero-scroll-wrapper">
     <section class="hero-section">
         <div class="container hero-content">
             <div class="hero-text">
-                <h1 style="font-size: 2.8rem; margin-bottom: 1.5rem;">Profesionalna <span class="gradient-text">Izrada Web Stranica</span><br>Koja Donosi Rezultate</h1>
+                <div class="floating-badge"><i class="fas fa-check-circle" style="color:var(--bordo-main); margin-right:6px;"></i> Moderna & Funkcionalna Izrada</div>
+                <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem;">Profesionalna <span class="gradient-text">Izrada Web Stranica</span><br>Koja Donosi Rezultate</h1>
                 <p style="font-size: 1.15rem; color: #666; margin-bottom: 2.5rem; max-width: 90%;">Tražite rješenje za web dizajn? Nudimo kompletnu uslugu: od <strong>izrade web stranica</strong> do premium shopova. Vaša stranica je SEO optimizovana za Google i prilagođena mobilnim uređajima.</p>
                 <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                     <a href="#faq" class="cta-button">Saznaj Cijene</a>
@@ -805,13 +793,9 @@
                 </div>
                 <div style="margin-top:20px; font-size:0.9rem; color:#555;"><strong>500+ Zadovoljnih klijenata</strong> širom BiH</div>
             </div>
-            <div id="hero-canvas-container">
-                <video id="hero-video" src="videofinal.mp4" preload="auto" muted playsinline webkit-playsinline style="display:none;"></video>
-                <canvas id="hero-canvas"></canvas>
-            </div>
+            <div id="hero-canvas-container"></div>
         </div>
     </section>
-    </div>
 
     <section class="section-padding transparent-section" id="usluge">
         <div class="container">
@@ -1060,8 +1044,8 @@
                 </div>
                 <div class="faq-answer">
                     <p style="padding-bottom:1.5rem;"><strong>Cijena izrade web stranica</strong> nije fiksna već ovisi o vašim potrebama, ali nudimo transparentne pakete:<br><br>
-                    1. <strong>Start Paket (cca 600 KM):</strong> Idealno za jednostavne prezentacijske stranice.<br>
-                    2. <strong>Business Paket (od 800 KM):</strong> Napredne WordPress stranice s unikatnim dizajnom.<br>
+                    1. <strong>Start Paket (od 600 KM):</strong> Idealno za jednostavne prezentacijske stranice.<br>
+                    2. <strong>Business Paket (od 1200 KM):</strong> Napredne WordPress stranice s unikatnim dizajnom.<br>
                     3. <strong>Web Shop (od 1500 KM+):</strong> Kompletna online trgovina.<br><br>
                     Za tačnu ponudu, najbolje je da nas kontaktirate.</p>
                 </div>
@@ -1334,166 +1318,43 @@
         function openLightbox(src) { document.getElementById('lightbox').classList.add('active'); document.getElementById('lightbox-img').src = src; }
         function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
 
-        // HERO SCROLL VIDEO — frame extraction approach (smooth, no seek lag)
-        function initScrollVideo() {
-            const wrapper   = document.getElementById('hero-scroll-wrapper');
-            const video     = document.getElementById('hero-video');
-            const canvas    = document.getElementById('hero-canvas');
+        // HERO 3D (WIREFRAME CUBES)
+        function initHero3D() {
             const container = document.getElementById('hero-canvas-container');
-            if (!wrapper || !video || !canvas || !container) return;
-
-            // Na mobilnom — pusti video normalno, bez scroll animacije
-            if (window.innerWidth <= 991) {
-                canvas.style.display = 'none';
-                video.style.display = 'block';
-                video.style.width = '100%';
-                video.style.height = '100%';
-                video.style.objectFit = 'cover';
-                video.setAttribute('autoplay', '');
-                video.setAttribute('loop', '');
-                video.setAttribute('playsinline', '');
-                video.muted = true;
-                video.play();
-                return;
+            if(!container) return;
+            window.heroContainer = container;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.z = 10; camera.position.y = 2; window.camera = camera;
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            container.appendChild(renderer.domElement);
+            window.renderer = renderer;
+            const group = new THREE.Group();
+            scene.add(group);
+            const geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
+            const material = new THREE.MeshBasicMaterial({ color: 0x8B0A1A, wireframe: true, transparent: true, opacity: 0.4 });
+            const materialSolid = new THREE.MeshBasicMaterial({ color: 0x9B59B6, transparent: true, opacity: 0.05 });
+            const cubes = [];
+            for(let i=0; i<6; i++) {
+                const cube = new THREE.Mesh(geometry, material);
+                cube.position.x = (Math.random() - 0.5) * 10; cube.position.y = (Math.random() - 0.5) * 8; cube.position.z = (Math.random() - 0.5) * 5;
+                cube.rotation.x = Math.random() * Math.PI; cube.rotation.y = Math.random() * Math.PI;
+                const solid = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1.4, 1.4), materialSolid);
+                cube.add(solid); group.add(cube);
+                cubes.push({ mesh: cube, speedX: (Math.random() - 0.5) * 0.01, speedY: (Math.random() - 0.5) * 0.01, rotSpeed: (Math.random() + 0.1) * 0.005 });
             }
-
-            const ctx = canvas.getContext('2d');
-            const TOTAL_FRAMES = 100;
-            let frames = [];
-            let currentIndex = -1;
-            let rafPending = false;
-
-            const fillEl = null;
-
-            function calcCanvasSize() {
-                const cW = container.clientWidth, cH = container.clientHeight;
-                if (!cW || !cH) return { w: 0, h: 0 };
-                return { w: cW, h: cH };
+            let mouseX = 0; let mouseY = 0;
+            document.addEventListener('mousemove', (event) => { mouseX = (event.clientX / window.innerWidth) * 2 - 1; mouseY = -(event.clientY / window.innerHeight) * 2 + 1; });
+            function animate() {
+                requestAnimationFrame(animate);
+                group.rotation.y += (mouseX * 0.5 - group.rotation.y) * 0.05;
+                group.rotation.x += (-mouseY * 0.5 - group.rotation.x) * 0.05;
+                cubes.forEach(item => { item.mesh.rotation.x += item.rotSpeed; item.mesh.rotation.y += item.rotSpeed; item.mesh.position.y += Math.sin(Date.now() * 0.001 + item.mesh.position.x) * 0.005; });
+                renderer.render(scene, camera);
             }
-
-            function drawIndex(i) {
-                if (!frames[i] || !canvas.width || !canvas.height) return;
-                const bmp = frames[i];
-                const bRatio = bmp.width / bmp.height;
-                const cRatio = canvas.width / canvas.height;
-                let sx, sy, sw, sh;
-                if (bRatio > cRatio) {
-                    // video širi od canvasa — odreži strane
-                    sh = bmp.height; sw = sh * cRatio;
-                    sx = (bmp.width - sw) / 2; sy = 0;
-                } else {
-                    // video viši od canvasa — odreži gore/dole
-                    sw = bmp.width; sh = sw / cRatio;
-                    sx = 0; sy = (bmp.height - sh) / 2;
-                }
-                ctx.drawImage(bmp, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
-            }
-
-            function extractFrames() {
-                if (!video.videoWidth || !video.videoHeight) return;
-                const off = document.createElement('canvas');
-                off.width = video.videoWidth; off.height = video.videoHeight;
-                const octx = off.getContext('2d');
-                let fi = 0;
-                let pendingBitmaps = 0;
-                let allSeeked = false;
-
-                function seekNext() {
-                    if (fi >= TOTAL_FRAMES) return;
-                    // Nikad ne seekamo na 0 ako smo već na 0 — seeked se ne bi okinuo
-                    const pct = fi / (TOTAL_FRAMES - 1);
-                    video.currentTime = pct === 0 ? 0.001 : pct * video.duration;
-                }
-
-                function showFrame(sz) {
-                    canvas.width = sz.w; canvas.height = sz.h;
-                    currentIndex = 0;
-                    drawIndex(0);
-                }
-
-                video.addEventListener('seeked', function onSeek() {
-                    if (fi >= TOTAL_FRAMES) return;
-                    octx.drawImage(video, 0, 0);
-
-                    // Uzmi boju pozadine iz kutova prvog frejma
-                    if (fi === 0) {
-                        try {
-                            const w = off.width, h = off.height, s = 20;
-                            const d1 = octx.getImageData(0, 0, s, s).data;
-                            const d2 = octx.getImageData(w - s, 0, s, s).data;
-                            const d3 = octx.getImageData(0, h - s, s, s).data;
-                            const d4 = octx.getImageData(w - s, h - s, s, s).data;
-                            let r = 0, g = 0, b = 0, n = 0;
-                            [d1, d2, d3, d4].forEach(function(d) {
-                                for (var i = 0; i < d.length; i += 4) { r += d[i]; g += d[i+1]; b += d[i+2]; n++; }
-                            });
-                            const col = 'rgb(' + Math.round(r/n) + ',' + Math.round(g/n) + ',' + Math.round(b/n) + ')';
-                            document.querySelector('.hero-section').style.background = col;
-                            container.style.background = col;
-                        } catch(e) {}
-                    }
-
-                    const idx = fi;
-                    fi++;
-                    pendingBitmaps++;
-                    // Sljedeći seek odmah — ne čekamo async bitmap
-                    if (fi < TOTAL_FRAMES) seekNext(); else allSeeked = true;
-
-                    createImageBitmap(off).then(function(bmp) {
-                        frames[idx] = bmp;
-                        pendingBitmaps--;
-                        const sz = calcCanvasSize();
-                        if (!sz.w) return;
-                        // Prikaži čim je prvi frejm spreman
-                        if (idx === 0) showFrame(sz);
-                        // Kad su svi gotovi osvježi canvas
-                        if (allSeeked && pendingBitmaps === 0) showFrame(sz);
-                    });
-                });
-
-                seekNext();
-            }
-
-            function onScroll() {
-                rafPending = false;
-                if (!frames.length) return;
-                const scrollRange = wrapper.offsetHeight - window.innerHeight;
-                const effectiveScroll = window.scrollY - wrapper.offsetTop;
-                const progress = Math.max(0, Math.min(1, effectiveScroll / scrollRange));
-
-                const idx = Math.min(frames.length - 1, Math.round(progress * (frames.length - 1)));
-                if (idx !== currentIndex) {
-                    currentIndex = idx;
-                    drawIndex(idx);
-                }
-            }
-
-            function scheduleScroll() {
-                if (rafPending) return;
-                rafPending = true;
-                requestAnimationFrame(onScroll);
-            }
-
-            function startExtraction() {
-                // play+pause forces decode so seeked events fire reliably on file://
-                video.play().then(function() {
-                    video.pause();
-                    extractFrames();
-                }).catch(function() {
-                    extractFrames();
-                });
-            }
-
-            if (video.readyState >= 1) { startExtraction(); }
-            else { video.addEventListener('loadedmetadata', startExtraction); }
-
-            window.addEventListener('scroll', scheduleScroll, { passive: true });
-            window.addEventListener('resize', function() {
-                const sz = calcCanvasSize();
-                if (!sz.w) return;
-                canvas.width = sz.w; canvas.height = sz.h;
-                drawIndex(currentIndex >= 0 ? currentIndex : 0);
-            });
+            animate();
         }
 
         // TABS
@@ -1507,12 +1368,17 @@
             evt.currentTarget.classList.add("active");
         }
 
-        window.addEventListener('load', () => { initBoxes('boxes-grid'); initCarousel(); initScrollVideo(); });
+        window.addEventListener('load', () => { initBoxes('boxes-grid'); initCarousel(); initHero3D(); });
         let resizeTimer;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
                 initBoxes('boxes-grid'); initCarousel();
+                if(window.camera && window.renderer && window.heroContainer) {
+                    window.camera.aspect = window.heroContainer.clientWidth / window.heroContainer.clientHeight;
+                    window.camera.updateProjectionMatrix();
+                    window.renderer.setSize(window.heroContainer.clientWidth, window.heroContainer.clientHeight);
+                }
             }, 250);
         });
     </script>
